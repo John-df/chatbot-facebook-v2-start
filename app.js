@@ -42,7 +42,15 @@ if (!config.SERVER_URL) { //used for ink to static files
 if (!config.PG_CONFIG) { //pg config  
     throw new Error('missing PG_CONFIG');  
 }
-
+if (!config.SENGRID_API_KEY) { //sending email  
+    throw new Error('missing SENGRID_API_KEY'); 
+}  
+if (!config.EMAIL_FROM) { //sending email 
+    throw new Error('missing EMAIL_FROM'); 
+}  
+if (!config.EMAIL_TO) { //sending email  
+    throw new Error('missing EMAIL_TO'); 
+} 
 
 
 app.set('port', (process.env.PORT || 5000))
