@@ -39,9 +39,9 @@ if (!config.FB_APP_SECRET) {
 if (!config.SERVER_URL) { //used for ink to static files
 	throw new Error('missing SERVER_URL');
 }
-if (!config.PG_CONFIG) { //pg config  
+/*if (!config.PG_CONFIG) { //pg config  
     throw new Error('missing PG_CONFIG');  
-}
+}*/
 
 
 
