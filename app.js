@@ -8,6 +8,9 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express();
 const uuid = require('uuid');
+ //module DB postgres
+const pg = require('pg');  
+pg.defaults.ssl = true; 
 
 
 // Messenger API parameters
