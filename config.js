@@ -17,5 +17,9 @@ module.exports = {
         port: 5432,  
         max: 10,  
         idleTimeoutMillis: 30000,  
-    } 
+    },
+    
+    SENGRID_API_KEY: process.env.SENGRID_API_KEY, 
+    EMAIL_FROM: process.env.EMAIL_FROM,  
+    EMAIL_TO: process.env.EMAIL_TO 
 };
