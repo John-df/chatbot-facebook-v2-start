@@ -19,7 +19,7 @@ module.exports = {
         idleTimeoutMillis: 30000,  
     },
     
-    SENGRID_API_KEY: process.env.SENGRID_API_KEY, 
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY, 
     EMAIL_FROM: process.env.EMAIL_FROM,  
     EMAIL_TO: process.env.EMAIL_TO 
 };
