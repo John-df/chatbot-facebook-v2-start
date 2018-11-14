@@ -264,9 +264,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
-				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
-				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
-				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
+				    let categorie=contexts[0].parameters.fields['Espace_confort'];
+				    let commentaire=contexts[0].parameters.fields['description'];
+				    let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
