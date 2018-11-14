@@ -237,78 +237,38 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
  
 				let years_of_experience = (isDefined(contexts[0].parameters.fields['years-of-experience']) 
 	  				        && contexts[0].parameters.fields['years-of-experience'] != '') ? contexts[0].parameters.fields['years-of-experience'].stringValue : ''; 
+ 
+				let job_vacancy = (isDefined(contexts[0].parameters.fields['job-vacancy']) 
+	   				        && contexts[0].parameters.fields['job-vacancy'] != '') ? contexts[0].parameters.fields['job-vacancy'].stringValue : ''; 
+
+				
+				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
+  
+				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
+					'.<br> Previous job position: ' + previous_job + '.' + 
+					'.<br> Years of experience: ' + years_of_experience + '.' + 
+					'.<br> Phone number: ' + phone_number + '.'; 
+  
+                   		   sendEmail('New job application', emailContent); 
+		                   handleMessages(messages, sender); 
 
 
  
-                let job_vacancy = (isDefined(contexts[0].parameters.fields['job-vacancy']) 
+                   		} else { 
+
+				   handleMessages(messages, sender); 
 
 
  
-                    && contexts[0].parameters.fields['job-vacancy'] != '') ? contexts[0].parameters.fields['job-vacancy'].stringValue : ''; 
+                		} 
 
 
  
-                if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' 
+           		 } break;
 
 
  
-                    && job_vacancy != '') { 
-
-
- 
- 
-
-
- 
-                    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
-
-
- 
-                        '.<br> Previous job position: ' + previous_job + '.' + 
-
-
- 
-                        '.<br> Years of experience: ' + years_of_experience + '.' + 
-
-
- 
-                        '.<br> Phone number: ' + phone_number + '.'; 
-
-
- 
- 
-
-
- 
-                    sendEmail('New job application', emailContent); 
-
-
- 
- 
-
-
- 
-                    handleMessages(messages, sender); 
-
-
- 
-                } else { 
-
-
- 
-                    handleMessages(messages, sender); 
-
-
- 
-                } 
-
-
- 
-            } 
-
-
- 
-            break; 
+             
 		default:
 			//unhandled action, just send back the text
             handleMessages(messages, sender);
