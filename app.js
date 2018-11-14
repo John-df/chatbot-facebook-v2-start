@@ -265,9 +265,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
-				    let categorie=contexts[0].parameters.fields['Espace_confort'];
-				    let commentaire=contexts[0].parameters.fields['description'];
-				    let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
+				   // let categorie=contexts[0].parameters.fields['Espace_confort'];
+				    //let commentaire=contexts[0].parameters.fields['description'];
+				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
@@ -286,15 +286,18 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
-							 '<td>'+categorie+'</td>'+
+							 '<td>Catégorie</td>'+
+							//'<td>'+categorie+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
-							' <td>'+commentaire+'</td>'+
+							' <td>Commentaire</td>'+
+							//'<td>'+commentaire+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							' <th>Bâtiment</th>'+
-							 '<td>'+batiment+'</td>'+
+							 //'<td>'+batiment+'</td>'+
+							'<td>Bâtiment</td>'+
 							'</tr> 	'+						
 							'</table>';
 				    		/*	'<br>'+
