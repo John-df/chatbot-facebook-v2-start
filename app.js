@@ -13,7 +13,7 @@ const uuid = require('uuid');
 const pg = require('pg');  
 pg.defaults.ssl = true; 
 
-const dateFormat=require('dateformat');
+//const dateFormat=require('dateformat');
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -264,7 +264,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 		} 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
-				    let date= dateFormat(now,"isoDate");
+				   // let date= dateFormat(now,"isoDate");
 				    let catégorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
 				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
@@ -282,7 +282,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>'+date+'</td>'+
+							 '<td>Date</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
