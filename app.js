@@ -262,7 +262,29 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				  
-				    let emailContent = 'Nous avons bien reçu votre Requête! :)) '; 
+				    let emailContent = 	<h2>Basic HTML Table</h2>
+							<table border= 1px  style="width:100%">
+ 							 <tr  >
+   							 <th>Firstname</th>
+   							 <th>Lastname</th> 
+    							<th>Age</th>
+  							</tr>
+  							<tr>
+    							<td>Jill</td>
+   							 <td>Smith</td>
+   							 <td>50</td>
+  							</tr>
+  							<tr>
+    							<td>Eve</td>
+    							<td>Jackson</td>
+    							<td>94</td>
+ 							 </tr>
+ 							 <tr>
+   							 <td>John</td>
+   							 <td>Doe</td>
+   							 <td>80</td>
+  							</tr>
+							</table>; 
   
                    		   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
