@@ -266,6 +266,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    var date= dateFormat(now,"isoDate");
 				    var catégorie=contexts[0].parameters.fields['Espace_confort'];
 				    var commentaire=contexts[0].parameters.fields['description'];
+				    var batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
@@ -290,7 +291,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							' <th>Bâtiment</th>'+
-							 '<td>Bâtiment</td>'+
+							 '<td>'+batiment+'</td>'+
 							'</tr> 	'+						
 							'</table>'; 
   
