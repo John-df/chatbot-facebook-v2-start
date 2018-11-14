@@ -259,7 +259,17 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				   handleMessages(messages, sender); 
                 		} 
-           		 } break;    
+           		 } break;  
+		case "Espace_Travail_Request_Validation":
+				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
+  
+				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
+					'.<br> Previous job position: ' + previous_job + '.' + 
+					'.<br> Years of experience: ' + years_of_experience + '.' + 
+					'.<br> Phone number: ' + phone_number + '.'; 
+  
+                   		   sendEmail('New job application', emailContent); 
+		                   handleMessages(messages, sender); 
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
