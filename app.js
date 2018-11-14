@@ -244,7 +244,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				
 				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
-  
+ 
 				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
 					'.<br> Previous job position: ' + previous_job + '.' + 
 					'.<br> Years of experience: ' + years_of_experience + '.' + 
@@ -274,91 +274,26 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 function sendEmail(subject, content) { 
 
-
- 
     console.log('sending email'); 
-
-
- 
     var helper = require('sendgrid').mail; 
-
-
- 
- 
-
-
- 
     var from_email = new helper.Email(config.EMAIL_FROM); 
-
-
- 
     var to_email = new helper.Email(config.EMAIL_TO); 
-
-
- 
     var subject = subject; 
-
-
- 
     var content = new helper.Content("text/html", content); 
-
-
- 
     var mail = new helper.Mail(from_email, subject, to_email, content); 
-
-
- 
- 
-
-
- 
     var sg = require('sendgrid')(config.SENGRID_API_KEY); 
-
-
- 
     var request = sg.emptyRequest({ 
-
-
- 
         method: 'POST', 
-
-
- 
         path: '/v3/mail/send', 
-
-
- 
         body: mail.toJSON() 
-
-
- 
     }); 
-
-
- 
- 
-
-
  
     sg.API(request, function(error, response) { 
 
-
- 
         console.log(response.statusCode) 
-
-
- 
         console.log(response.body) 
-
-
- 
         console.log(response.headers) 
-
-
- 
     }) 
-
-
  
 } 
 
