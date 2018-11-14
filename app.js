@@ -234,7 +234,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				let user_name = (isDefined(contexts[0].parameters.fields['user-name']) 
 					    	&& contexts[0].parameters.fields['user-name'] != '') ? contexts[0].parameters.fields['user-name'].stringValue : ''; 
- 
+
+				
 				let previous_job = (isDefined(contexts[0].parameters.fields['previous-job']) 
 	    				        && contexts[0].parameters.fields['previous-job'] != '') ? contexts[0].parameters.fields['previous-job'].stringValue : ''; 
  
@@ -265,6 +266,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
 				    let categorie=contexts[0].parameters.fields['Espace_confort'];
+					handleMessages(messages, sender); 
 				    let commentaire=contexts[0].parameters.fields['description'];
 				    let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
