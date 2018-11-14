@@ -265,6 +265,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 				    var date= dateFormat(now,"isoDate");
 				    var catégorie=contexts[0].parameters.fields['Espace_confort'];
+				    var commentaire=contexts[0].parameters.fields['description'];
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
@@ -277,15 +278,15 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>Date</td>'+
+							 '<td>'+date+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
-							 '<td>Catégorie</td>'+
+							 '<td>'+catégorie+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
-							' <td>Commentaire</td>'+
+							' <td>'+commentaire+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							' <th>Bâtiment</th>'+
