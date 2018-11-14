@@ -266,7 +266,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
    							 '<th>Référence</th>'+
-							 '<td>Référence</td>'+
+							 '<td>000102</td>'+
 							'</tr>'+
 							'<tr>'+
    							 '<th>Demandeur</th>'+
