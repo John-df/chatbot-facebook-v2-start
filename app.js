@@ -268,7 +268,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let categorie=contexts[0].parameters.fields['Espace_confort'];
 				    }
 				    catch(err){
-					categorie=err.message;}
+					app.get('/error', function (req, res) {
+
+					res.send('error : '+err.message)
+
+					})}
 				    //let commentaire=typeof contexts[0].parameters.fields['description'];
 				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
