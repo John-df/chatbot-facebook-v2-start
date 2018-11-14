@@ -265,29 +265,29 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
-   							 '<th>Référence</th>
-							 '<td>Référence</td>
-							'</tr>
-							'<tr>
-   							 '<th>Demandeur</th>
-							 '<td>Demandeur</td>
-							'</tr>
-							'<tr>
-    							 '<th>Date</th>
-							 '<td>Date</td>
-							'</tr>
-							'<tr>
-    							 '<th>Catégorie</th>
-							 '<td>Catégorie</td>
-							'</tr>
-							'<tr>
-    							 '<th>Commentaire</th>
-							' <td>Commentaire</td>
-							'</tr>
-							'<tr>
-    							' <th>Bâtiment</th>
-							 '<td>Bâtiment</td>
-							'</tr> 							
+   							 '<th>Référence</th>'+
+							 '<td>Référence</td>'+
+							'</tr>'+
+							'<tr>'+
+   							 '<th>Demandeur</th>'+
+							 '<td>Demandeur</td>'+
+							'</tr>'+
+							'<tr>'+
+    							 '<th>Date</th>'+
+							 '<td>Date</td>'+
+							'</tr>'+
+							'<tr>'+
+    							 '<th>Catégorie</th>'+
+							 '<td>Catégorie</td>'+
+							'</tr>'+
+							'<tr>'+
+    							 '<th>Commentaire</th>'+
+							' <td>Commentaire</td>'+
+							'</tr>'+
+							'<tr>'+
+    							' <th>Bâtiment</th>'+
+							 '<td>Bâtiment</td>'+
+							'</tr> 	'+						
 							'</table>'; 
   
                    		   sendEmail('Requete Facility', emailContent); 
