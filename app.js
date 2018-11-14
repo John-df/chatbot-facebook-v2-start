@@ -264,8 +264,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
+				    try {
 				    let categorie=typeof contexts[0].parameters.fields['Espace_confort'];
-				    let commentaire=typeof contexts[0].parameters.fields['description'];
+				    }
+				catch(err){
+					categorie=err.message;}
+				    //let commentaire=typeof contexts[0].parameters.fields['description'];
 				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
@@ -290,8 +294,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
-							//' <td>Commentaire</td>'+
-							'<td>'+commentaire.toString()+'</td>'+
+							' <td>Commentaire</td>'+
+							//'<td>'+commentaire.toString()+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							' <th>Bâtiment</th>'+
