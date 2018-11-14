@@ -266,7 +266,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
 				    let categorie=typeof contexts[0].parameters['Espace_confort'];
-				    //let commentaire=contexts[0].parameters.fields['description'];
+				    let commentaire=typeof contexts[0].parameters.fields['description'];
 				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
@@ -287,12 +287,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'<tr>'+
     							 '<th>Catégorie</th>'+
 							 //'<td>Catégorie</td>'+
-							'<td>'+categorie+'</td>'+
+							'<td>'+categorie.toString()+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
-							' <td>Commentaire</td>'+
-							//'<td>'+commentaire+'</td>'+
+							//' <td>Commentaire</td>'+
+							'<td>'+commentaire.toString()+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							' <th>Bâtiment</th>'+
