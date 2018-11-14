@@ -236,7 +236,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				
 				let previous_job = (isDefined(contexts[0].parameters.fields['previous-job']) 
-	    				        && contexts[0].parameters.fields['previous-job'] != '') ? contexts[0].parameters.fields['previous-job'].stringValue : ''; 
+ 	    				        && contexts[0].parameters.fields['previous-job'] != '') ? contexts[0].parameters.fields['previous-job'].stringValue : ''; 
  
 				let years_of_experience = (isDefined(contexts[0].parameters.fields['years-of-experience']) 
 	  				        && contexts[0].parameters.fields['years-of-experience'] != '') ? contexts[0].parameters.fields['years-of-experience'].stringValue : ''; 
@@ -265,12 +265,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
 				    try {
-				    let categorie=contexts[0].parameters.fields['Espace_confort'];
+				    let categorie=contexts["espace_travail_request-followup-2"].parameters.fields['Espace_confort'];
 				    }
-				    catch(err){
+				    catch(err){//bricolage pour avoir accès à l'erreur pcq pas de client log
 					app.get('/error', function (req, res) {
 
-					res.send('error : '+err.message)
+					res.send('error 2 : '+err.message)
 
 					})}
 				    //let commentaire=typeof contexts[0].parameters.fields['description'];
