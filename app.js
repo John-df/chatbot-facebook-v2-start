@@ -261,20 +261,106 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 		} 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
-				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
+				  
+				    let emailContent = 'Nous avons bien reçu votre Requête! :)) '; 
   
-				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
-					'.<br> Previous job position: ' + previous_job + '.' + 
-					'.<br> Years of experience: ' + years_of_experience + '.' + 
-					'.<br> Phone number: ' + phone_number + '.'; 
-  
-                   		   sendEmail('New job application', emailContent); 
+                   		   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
 		}
 }
+
+function sendEmail(subject, content) { 
+
+
+ 
+    console.log('sending email'); 
+
+
+ 
+    var helper = require('sendgrid').mail; 
+
+
+ 
+ 
+
+
+ 
+    var from_email = new helper.Email(config.EMAIL_FROM); 
+
+
+ 
+    var to_email = new helper.Email(config.EMAIL_TO); 
+
+
+ 
+    var subject = subject; 
+
+
+ 
+    var content = new helper.Content("text/html", content); 
+
+
+ 
+    var mail = new helper.Mail(from_email, subject, to_email, content); 
+
+
+ 
+ 
+
+
+ 
+    var sg = require('sendgrid')(config.SENGRID_API_KEY); 
+
+
+ 
+    var request = sg.emptyRequest({ 
+
+
+ 
+        method: 'POST', 
+
+
+ 
+        path: '/v3/mail/send', 
+
+
+ 
+        body: mail.toJSON() 
+
+
+ 
+    }); 
+
+
+ 
+ 
+
+
+ 
+    sg.API(request, function(error, response) { 
+
+
+ 
+        console.log(response.statusCode) 
+
+
+ 
+        console.log(response.body) 
+
+
+ 
+        console.log(response.headers) 
+
+
+ 
+    }) 
+
+
+ 
+} 
 
 function handleMessage(message, sender) {
     switch (message.message) {
