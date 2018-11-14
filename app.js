@@ -276,12 +276,18 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
     							 <th>Date</th>
 							 <td>Date</td>
 							</tr>
-							
-							 <tr>Catégorie</tr>
-							 <tr>commentaire</tr>
-							 <tr>Bâtiment</tr>
-  							</tr>
-  							
+							<tr>
+    							 <th>Catégorie</th>
+							 <td>Catégorie</td>
+							</tr>
+							<tr>
+    							 <th>Commentaire</th>
+							 <td>Commentaire</td>
+							</tr>
+							<tr>
+    							 <th>Bâtiment</th>
+							 <td>Bâtiment</td>
+							</tr> 							
 							</table>'; 
   
                    		   sendEmail('Requete Facility', emailContent); 
