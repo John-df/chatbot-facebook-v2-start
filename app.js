@@ -211,7 +211,6 @@ function handleQuickReply(senderID, quickReply, messageId) {
 	//send payload to api.ai
 	sendToDialogFlow(senderID, quickReplyPayload);
 }
-
 //https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-echo
 
 function handleEcho(messageId, appId, metadata) {
@@ -265,7 +264,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
-				    let catégorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
+				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
 				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
@@ -286,7 +285,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
-							 '<td>'+catégorie+'</td>'+
+							 '<td>'+categorie+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
