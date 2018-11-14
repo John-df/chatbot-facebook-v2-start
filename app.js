@@ -220,8 +220,7 @@ function handleEcho(messageId, appId, metadata) {
 
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 
-	switch (action) { // ATTENTION REtirer espace + indenter comme il faut + changer detailed-application par nom de mon action
-			  // + changer nom variables par nom de mes variable + ajouter function sendEmail !
+	switch (action) { 
 		case "detailed-application":  
             		if (isDefined(contexts[0]) &&
 			    (contexts[0].name.includes('job_application') ||
@@ -247,7 +246,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				
 				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
- 
+  
 				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
 					'.<br> Previous job position: ' + previous_job + '.' + 
 					'.<br> Years of experience: ' + years_of_experience + '.' + 
