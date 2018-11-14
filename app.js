@@ -293,7 +293,7 @@ function sendEmail(subject, content) {
         console.log(response.statusCode) 
         console.log(response.body) 
         console.log(response.headers) 
-    }) 
+    }); 
  
 } 
 
