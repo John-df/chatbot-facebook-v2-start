@@ -265,7 +265,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
 				    try {
-				    let categorie=contexts["projects/facilitybot/agent/sessions/e54178ac-ac55-f001-b5b0-d68332a30d98/contexts/espace_travail_request-followup-2"].parameters.fields['Espace_confort'];
+				    let categorie=contexts[0].parameters.fields['Espace_confort'];
 				    }
 				    catch(err){//bricolage pour avoir accès à l'erreur pcq pas de client log
 					app.get('/error', function (req, res) {
