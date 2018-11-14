@@ -213,6 +213,7 @@ function handleQuickReply(senderID, quickReply, messageId) {
 }
 
 //https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-echo
+
 function handleEcho(messageId, appId, metadata) {
 	// Just logging message echoes to console
 	console.log("Received echo for message %s and app %d with metadata %s", messageId, appId, metadata);
@@ -263,6 +264,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				    var date= dateFormat(now,"isoDate");
+				    var catégorie=contexts[0].parameters.fields['Espace_confort'];
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
