@@ -13,6 +13,7 @@ const uuid = require('uuid');
 const pg = require('pg');  
 pg.defaults.ssl = true; 
 
+const dateFormat=require('dateformat');
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -226,7 +227,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 			    (contexts[0].name.includes('job_application') ||
 			     contexts[0].name.includes('job-application-details_dialog_context')) 
 		             && contexts[0].parameters) { 
- 
+  
                			let phone_number = (isDefined(contexts[0].parameters.fields['phone-number'])  
                   				&& contexts[0].parameters.fields['phone-number'] != '') ? contexts[0].parameters.fields['phone-number'].stringValue : ''; ''; 
 
@@ -261,7 +262,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 		} 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
-				  
+				    var date= dateFormat(now,"isoDate");
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
