@@ -230,7 +230,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		             && contexts[0].parameters) { 
   
                			let phone_number = (isDefined(contexts[0].parameters.fields['phone-number'])  
-                  				&& contexts[0].parameters.fields['phone-number'] != '') ? contexts[0].parameters.fields['phone-number'].stringValue : ''; ''; 
+
+						    && contexts[0].parameters.fields['phone-number'] != '') ? contexts[0].parameters.fields['phone-number'].stringValue : ''; ''; 
 
 				let user_name = (isDefined(contexts[0].parameters.fields['user-name']) 
 					    	&& contexts[0].parameters.fields['user-name'] != '') ? contexts[0].parameters.fields['user-name'].stringValue : ''; 
@@ -264,9 +265,10 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 				    let date= dateFormat(now,"isoDate");
-				    let catégorie=contexts[0].parameters.fields['Espace_confort'];
-				    let commentaire=contexts[0].parameters.fields['description'];
-				    let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
+				    let catégorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
+				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
+				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
+				    let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px  style="width:100%"> '+
  							'<tr>'+
