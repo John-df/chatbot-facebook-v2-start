@@ -218,7 +218,8 @@ function handleEcho(messageId, appId, metadata) {
 }
 
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
-		switch (action) { // ATTENTION REtirer espace + indenter comme il faut + changer detailed-application par nom de mon action
+
+	switch (action) { // ATTENTION REtirer espace + indenter comme il faut + changer detailed-application par nom de mon action
 			  // + changer nom variables par nom de mes variable + ajouter function sendEmail !
 		case "detailed-application":  
             		if (isDefined(contexts[0]) &&
@@ -257,18 +258,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                    		} else { 
 
 				   handleMessages(messages, sender); 
-
-
- 
                 		} 
-
-
- 
-           		 } break;
-
-
- 
-             
+           		 } break;    
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
