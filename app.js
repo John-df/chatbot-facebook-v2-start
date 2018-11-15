@@ -264,10 +264,10 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 			//sender, action, messages, contexts, parameters
-				let snd=isDefined(sender);
+				let snd=sender;
 			    	//let action=isDefined(action);
 				//let contexts=isDefined(contexts);
-				let msg=isDefined(messages);
+				let msg=messages;
 				//let parameters=isDefined(parameters);
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
 			   	console.log("sender : "+snd+" || Messages : "+msg);
