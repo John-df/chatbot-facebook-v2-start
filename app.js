@@ -280,9 +280,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    catch(err){
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
-				    let categorie=contexts[0].parameters.fields['Espace_confort']
-				    let commentaire=typeof contexts[0].parameters.fields['description'];
-				    let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
+				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
+				    let commentaire=typeof contexts[0].parameters.fields['description'].stringValue;
+				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
@@ -297,7 +297,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>Date</td>'+
+							 '<td>$Date</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
@@ -310,9 +310,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'<td>'+commentaire+'</td>'+
 							'</tr>'+
 							'<tr>'+
-    							//' <th>Bâtiment</th>'+
+    							' <th>Bâtiment</th>'+
 							 '<td>'+batiment+'</td>'+
-							'<td>Bâtiment</td>'+
+							//'<td>Bâtiment</td>'+
 							'</tr> 	'+						
 							'</table>';
 				    			'<br>'+
