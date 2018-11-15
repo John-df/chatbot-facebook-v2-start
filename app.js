@@ -313,11 +313,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
     							' <th>Bâtiment</th>'+
 							 '<td>'+batiment+'</td>'+
 							//'<td>Bâtiment</td>'+
-							'</tr> 	'+						
+							'</tr> 	'+
+							'<tr> '+
+								'<th>Json</th>'+
+								'<th>'+paramJson+'</th>+
+				    			'</tr>'
 							'</table>';
-				    			'<br>'+
-							'<table border= 1px  style="width:100%"> '+paramJson+
-							'</table>'; 
+							 
 				  
   
                    		   sendEmail('Requete Facility', emailContent); 
