@@ -316,7 +316,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr> 	'+
 							'<tr> '+
 								'<th>Json</th>'+
-								'<th>'+paramJson+'</th>+
+								'<th>'+paramJson+'</th>'+
 				    			'</tr>'
 							'</table>';
 							 
