@@ -265,11 +265,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 			//sender, action, messages, contexts, parameters
 				let snd=isDefined(sender);
-			    	let action=isDefined(action);
-				let contexts=isDefined(contexts);
+			    	//let action=isDefined(action);
+				//let contexts=isDefined(contexts);
 				let msg=isDefined(messages);
-				let parameters=isDefined(parameters);
-			   	console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
+				//let parameters=isDefined(parameters);
+				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
+			   	console.log("sender : "+snd+" || Messages : "+msg);
 				   // let date= dateFormat(now,"isoDate");
 				    /*try {
 				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
