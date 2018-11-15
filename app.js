@@ -13,7 +13,7 @@ const uuid = require('uuid');
 const pg = require('pg');  
 pg.defaults.ssl = true; 
 
-let dateFormat=require('dateformat');
+//let dateFormat=require('dateformat');
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -280,7 +280,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    catch(err){
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
-				    let date= dateFormat(new Date(),"isoDate");
+				    //let date= dateFormat(new Date(),"isoDate");
+				    let date= "15/11/2018";
+				    let demandeur="Wachrine Oussama";
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[0].parameters.fields['Espace_confort.original'].stringValue;
 				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
@@ -295,11 +297,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
    							 '<th>Demandeur</th>'+
-							 '<td>$Demandeur</td>'+
+							 '<td>'+demandeur+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>'+date.toString()+'</td>'+
+							 '<td>'+date+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
