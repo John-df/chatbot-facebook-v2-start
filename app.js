@@ -270,7 +270,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				let msg=messages;
 				//let parameters=isDefined(parameters);
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
-			   	console.log("sender : "+snd+" || Messages : "+msg);
+			   	console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg));
 				   // let date= dateFormat(now,"isoDate");
 				    /*try {
 				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
