@@ -281,7 +281,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
-				    let commentaire=typeof contexts[0].parameters.fields['description'].stringValue;
+				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
 				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
