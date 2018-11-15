@@ -264,14 +264,15 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  
 		case "Espace_Travail_Request_Validation":
 			//sender, action, messages, contexts, parameters
-				let snd=sender;
+				//let snd=sender;
 			    	//let action=isDefined(action);
 				//let contexts=isDefined(contexts);
-				let msg=messages;
+				//let msg=messages;
 				//let parameters=isDefined(parameters);
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
-			   	console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
-				   // let date= dateFormat(now,"isoDate");
+			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
+				   console.log(JSON.stringify(contexts[0].parameters));
+				    // let date= dateFormat(now,"isoDate");
 				    /*try {
 				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
 				    	let categorie=contexts[0];
@@ -279,9 +280,10 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    catch(err){
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
-				    //let commentaire=typeof contexts[0].parameters.fields['description'];
-				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
-				    //let paramJson=JSON.stringify(contexts[0].parameters);
+				    let categorie=contexts[0].parameters.fields['Espace_confort']
+				    let commentaire=typeof contexts[0].parameters.fields['description'];
+				    let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
+				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 1px border = solid border = black  style="width:100%"> '+
@@ -291,7 +293,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
    							 '<th>Demandeur</th>'+
-							 '<td>Demandeur</td>'+
+							 '<td>$Demandeur</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
@@ -299,23 +301,23 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
-							 '<td>Catégorie</td>'+
-							//'<td>'+categorie+'</td>'+
+							 //'<td>Catégorie</td>'+
+							'<td>'+categorie+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
-							' <td>Commentaire</td>'+
-							//'<td>'+commentaire.toString()+'</td>'+
+							//' <td>Commentaire</td>'+
+							'<td>'+commentaire'</td>'+
 							'</tr>'+
 							'<tr>'+
-    							' <th>Bâtiment</th>'+
-							 //'<td>'+batiment+'</td>'+
+    							//' <th>Bâtiment</th>'+
+							 '<td>'+batiment+'</td>'+
 							'<td>Bâtiment</td>'+
 							'</tr> 	'+						
 							'</table>';
-				    		/*	'<br>'+
+				    			'<br>'+
 							'<table border= 1px  style="width:100%"> '+paramJson+
-							'</table>'; */
+							'</table>'; 
 				  
   
                    		   sendEmail('Requete Facility', emailContent); 
