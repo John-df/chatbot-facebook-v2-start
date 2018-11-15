@@ -280,7 +280,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    catch(err){
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
-				    let date= dateFormat(now,"isoDate");
+				    let date= dateFormat(new Date(),"isoDate");
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[0].parameters.fields['Espace_confort.original'].stringValue;
 				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
