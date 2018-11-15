@@ -286,7 +286,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
-							'<table border= 1px border = solid border = black  style="width:100%"> '+
+							'<table border= 4px border = solid border = black  style="width:100%"> '+
  							'<tr>'+
    							 '<th>Référence</th>'+
 							 '<td>000102</td>'+
@@ -316,7 +316,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr> 	'+
 							'<tr> '+
 								'<th>Json</th>'+
-								'<th>'+paramJson+'</th>'+
+								'<td>'+paramJson+'</td>'+
 				    			'</tr>'
 							'</table>';
 							 
