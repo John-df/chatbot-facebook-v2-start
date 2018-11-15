@@ -265,10 +265,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_Travail_Request_Validation":
 				   // let date= dateFormat(now,"isoDate");
 				    try {
-				    let categorie=contexts[0].parameters.fields['Espace_confort'];
+				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
+				    	let categorie=contexts[0];
 				    }
 				    catch(err){
-					    console.log("Erreur action Validation : "+err.message);
+					    console.log("Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }
 				    //let commentaire=typeof contexts[0].parameters.fields['description'];
 				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
