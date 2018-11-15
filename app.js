@@ -267,12 +267,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    try {
 				    let categorie=contexts[0].parameters.fields['Espace_confort'];
 				    }
-				    catch(err){//bricolage pour avoir accès à l'erreur pcq pas de client log
-					app.get('/error', function (req, res) {
-
-					res.send('error 2 : '+err.message)
-
-					})}
+				    catch(err){
+					    console.log("Erreur action Validation : "+err.message);
+				    }
 				    //let commentaire=typeof contexts[0].parameters.fields['description'];
 				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
 				    //let paramJson=JSON.stringify(contexts[0].parameters);
