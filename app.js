@@ -13,7 +13,7 @@ const uuid = require('uuid');
 const pg = require('pg');  
 pg.defaults.ssl = true; 
 
-//const dateFormat=require('dateformat');
+let dateFormat=require('dateformat');
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -272,7 +272,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
-				    // let date= dateFormat(now,"isoDate");
+				    //let date= dateFormat(now,"isoDate");
 				    /*try {
 				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
 				    	let categorie=contexts[0];
@@ -280,6 +280,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    catch(err){
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
+				    let date= dateFormat(now,"isoDate");
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[0].parameters.fields['Espace_confort.original'].stringValue;
 				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
@@ -298,7 +299,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>$Date</td>'+
+							 '<td>'+date.toString()+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
