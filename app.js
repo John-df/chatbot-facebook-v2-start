@@ -269,7 +269,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    	let categorie=contexts[0];
 				    }
 				    catch(err){
-					    console.log("Erreur action Validation : "+err.message+"\n context : "+categorie);
+					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }
 				    //let commentaire=typeof contexts[0].parameters.fields['description'];
 				    //let batiment=contexts[0].parameters.fields['batiment']+contexts[0].parameters.fields['etage'];
