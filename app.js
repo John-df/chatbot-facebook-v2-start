@@ -14,7 +14,7 @@ const pg = require('pg');
 pg.defaults.ssl = true; 
 
 //let dateFormat=require('dateformat');
-let date = require('date-and-time');
+//let date = require('date-and-time');
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -281,8 +281,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    catch(err){
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
-				    let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
-				    //let date= "15/11/2018";
+				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
+				    let date= "15/11/2018";
 				    let demandeur="Wachrine Oussama";
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[0].parameters.fields['Espace_confort.original'].stringValue;
@@ -302,7 +302,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>'+dateToday.toString()+'</td>'+
+							 '<td>'+date+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
