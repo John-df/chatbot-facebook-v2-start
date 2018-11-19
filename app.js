@@ -1018,6 +1018,7 @@ function verifyRequestSignature(req, res, buf) {
 	console.log("content : "+content);
 
 	if (!signature) {
+		console.log("request : "+req);
 		throw new Error('Couldn\'t validate the signature.');
 	} else {
 		var elements = signature.split('=');
