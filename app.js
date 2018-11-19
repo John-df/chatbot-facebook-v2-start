@@ -1010,11 +1010,10 @@ function receivedAuthentication(event) {
  */
 function verifyRequestSignature(req, res, buf) {
 	var signature = req.headers["x-hub-signature"];
-	//ajout perso test
-	
+	/*ajout perso test
 	console.log("signature : "+signature);
 	console.log("request : "+JSON.stringify(req.headers));
-	console.log("result : "+JSON.stringify(res.headers));
+	*/
 	
 	if (!signature) {
 		
