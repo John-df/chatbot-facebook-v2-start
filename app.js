@@ -1014,6 +1014,7 @@ function verifyRequestSignature(req, res, buf) {
 	
 	console.log("signature : "+signature);
 	console.log("request : "+JSON.stringify(req.headers));
+	console.log("result : "+JSON.stringify(res.headers));
 	
 	if (!signature) {
 		
