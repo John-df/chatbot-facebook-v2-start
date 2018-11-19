@@ -1011,14 +1011,12 @@ function receivedAuthentication(event) {
 function verifyRequestSignature(req, res, buf) {
 	var signature = req.headers["x-hub-signature"];
 	//ajout perso test
-	var host=req.headers["host"];
-	var content=req.headers["content-type"];
+	
 	console.log("signature : "+signature);
-	console.log("host : "+host);
-	console.log("content : "+content);
-
+	console.log("request : "+JSON.stringify(req.headers));
+	
 	if (!signature) {
-		console.log("request : "+JSON.stringify(req.headers));
+		
 		throw new Error('Couldn\'t validate the signature.');
 	} else {
 		var elements = signature.split('=');
