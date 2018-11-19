@@ -1010,6 +1010,7 @@ function receivedAuthentication(event) {
  */
 function verifyRequestSignature(req, res, buf) {
 	var signature = req.headers["x-hub-signature"];
+	console.log("signature : "+signature);
 
 	if (!signature) {
 		throw new Error('Couldn\'t validate the signature.');
