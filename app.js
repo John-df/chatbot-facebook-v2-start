@@ -1009,7 +1009,7 @@ function receivedAuthentication(event) {
  *
  */
 function verifyRequestSignature(req, res, buf) {
-	var signature = req.headers["x-hub-signature"];
+	var signature = req.headers["X-Hub-Signature"];
 	console.log("signature : "+signature);
 
 	if (!signature) {
