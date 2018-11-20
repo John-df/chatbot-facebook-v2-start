@@ -297,7 +297,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'table, th, td {'+
 							   ' border: 1px solid blue;}'+
 							'table {'+
-								'width: 100%;}'+
+ 								'width: 100%;}'+
 							'</style>'+
 							'</head>'+
 							'<body>'+
@@ -332,7 +332,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr> 	'+
 							'<tr> '+
 								'<th>Json</th>'+
-								'<td>'+paramJson+'</td>'+
+								'<td width= 50%>'+paramJson+'</td>'+
 				    			'</tr>'
 							'</table>'+
 							'</body>'+
