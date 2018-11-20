@@ -332,7 +332,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr> 	'+
 							'<tr> '+
 								'<th>Json</th>'+
-								'<td width= 50%>'+paramJson+'</td>'+
+								'<td width=" 50%">'+paramJson+'</td>'+
 				    			'</tr>'
 							'</table>'+
 							'</body>'+
