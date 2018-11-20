@@ -334,7 +334,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				  
   
                    		   sendEmail('Requete Facility', emailContent); 
-		                   handleMessages(messages, sender); 
+		                   //handleMessages(messages, sender); 
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
