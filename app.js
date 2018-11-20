@@ -290,7 +290,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
-				    let emailContent = 	'<h2>Nouvelle Requête N°000102</h2>'+ 
+				    let emailContent = 	'<html>'+
+							'<head>'+
+							'</head>'+
+							'<body>'+
+							'<h2>Nouvelle Requête N°000102</h2>'+ 
 							'<table border= 4px border = solid border = black  style="width:100%"> '+
  							'<tr>'+
    							 '<th>Référence</th>'+
@@ -323,7 +327,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 								'<th>Json</th>'+
 								'<td>'+paramJson+'</td>'+
 				    			'</tr>'
-							'</table>';
+							'</table>'+
+							'</body>'+
+							'</html>';
 							 
 				  
   
