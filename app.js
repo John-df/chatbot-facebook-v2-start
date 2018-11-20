@@ -293,10 +293,16 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let emailContent = 	'<!DOCTYPE html>'+
 							'<html>'+
 							'<head>'+
+							'<style>'+
+							'table, th, td {'+
+							   ' border: 1px solid blue;}'+
+							'table {'+
+								'width: 100%;}'+
+							'</style>'+
 							'</head>'+
 							'<body>'+
 							'<h2>Nouvelle Requête N°000102</h2>'+ 
-							'<table style="width:100%;border= 4px;border = solid;border = black;"> '+
+							'<table> '+
  							'<tr>'+
    							 '<th>Référence</th>'+
 							 '<td>000102</td>'+
