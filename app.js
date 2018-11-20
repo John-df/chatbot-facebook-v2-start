@@ -302,11 +302,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</head>'+
 							'<body>'+
 							'<h2>Nouvelle Requête N°000102</h2>'+ 
-						       /* '<div>'+
+						        '<div>'+
 								'Bonjour Oussama,<br><br>'+
 								'Ta requête vient d\'être enregistrée et sera traitée dans les plus brefs délais<br><br>'+
 								'Bien à toi <br><br>'+
-							'</div>'+ */
+							'</div>'+ 
 							'<table> '+
  							'<tr>'+
    							 '<th>Référence</th>'+
