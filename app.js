@@ -290,7 +290,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
-				    let emailContent = 	'<html>'+
+				    let emailContent = 	'<!DOCTYPE html>'+
+							'<html>'+
 							'<head>'+
 							'</head>'+
 							'<body>'+
