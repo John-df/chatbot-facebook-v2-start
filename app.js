@@ -296,7 +296,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</head>'+
 							'<body>'+
 							'<h2>Nouvelle Requête N°000102</h2>'+ 
-							'<table border= 4px border = solid border = black  style="width:100%"> '+
+							'<table style="width:100%;border= 4px;border = solid;border = black;"> '+
  							'<tr>'+
    							 '<th>Référence</th>'+
 							 '<td>000102</td>'+
