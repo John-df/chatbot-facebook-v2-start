@@ -325,7 +325,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'<tr>'+
     							 '<th>Catégorie</th>'+
 							 //'<td>Catégorie</td>'+
-							'<td>'+categorie+' ('+catOrig+')</td>'+
+							'<td>'+categorie+' '+catOrig+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Commentaire</th>'+
