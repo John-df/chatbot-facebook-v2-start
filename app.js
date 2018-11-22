@@ -264,9 +264,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 		} 
            		 } break;  
 		case "input.welcome":
-				let senderID=sender.id;
-				console.log("sender : "+sender+"||"+" sender id : "+sender.id);
-				greetUserText(senderID);
+				
+				greetUserText(sender);break;
 			
 		case "Espace_Travail_Request_Validation":
 			//sender, action, messages, contexts, parameters
