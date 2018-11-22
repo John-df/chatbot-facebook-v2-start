@@ -263,6 +263,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				   handleMessages(messages, sender); 
                 		} 
            		 } break;  
+		case "input.welcome":
+				let senderID=sender.id;
+				console.log("sender : "+sender+"||"+" sender id : "+sender.id);
+				greetUserText(senderID);
+			
 		case "Espace_Travail_Request_Validation":
 			//sender, action, messages, contexts, parameters
 				//let snd=sender;
