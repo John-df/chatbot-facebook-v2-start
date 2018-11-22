@@ -855,88 +855,27 @@ function greetUserText(userId) {
                         	return console.error('Error acquiring client', err.stack);  
                     		}  
                     		var rows = []; 
-
-
  
-                    client.query(`SELECT fb_id FROM users WHERE fb_id='${userId}' LIMIT 1`, 
-
-
- 
-                        function(err, result) { 
-
-
- 
-                            if (err) { 
-
-
- 
-                                console.log('Query error: ' + err); 
-
-
- 
-                            } else { 
-
-
- 
- 
-
-
- 
-                                if (result.rows.length === 0) { 
-
-
- 
-                                    let sql = 'INSERT INTO users (fb_id, first_name, last_name, profile_pic) ' + 
-
-
- 
+                    		client.query(`SELECT fb_id FROM users WHERE fb_id='${userId}' LIMIT 1`,  
+                       		 function(err, result) {  
+                            		if (err) {  
+                                		console.log('Query error: ' + err); 
+                            		} else {  
+                                		if (result.rows.length === 0) {  
+ 		                                   let sql = 'INSERT INTO users (fb_id, first_name, last_name, profile_pic) ' + 
 										'VALUES ($1, $2, $3, $4)'; 
-
-
  
-                                    client.query(sql, 
+		                                    client.query(sql, 
+		                                        [ 
+		                                            userId, 
+		                                            user.first_name, 
+		                                            user.last_name, 
+		                                            user.profile_pic 
+		                                        ]); 
+		                                } 
+	                            } 
 
-
- 
-                                        [ 
-
-
- 
-                                            userId, 
-
-
- 
-                                            user.first_name, 
-
-
- 
-                                            user.last_name, 
-
-
- 
-                                            user.profile_pic 
-
-
- 
-                                        ]); 
-
-
- 
-                                } 
-
-
- 
-                            } 
-
-
- 
                         }); 
-
-
- 
- 
-
-
  
                 }); 
 
