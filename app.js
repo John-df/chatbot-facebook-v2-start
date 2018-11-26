@@ -13,7 +13,7 @@ const uuid = require('uuid');
 const pg = require('pg');  
 pg.defaults.ssl = true; 
 
-const langue_bot="";
+let langue_bot="";
 
 //let dateFormat=require('dateformat');
 //let date = require('date-and-time');
