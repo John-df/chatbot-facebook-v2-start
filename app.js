@@ -367,12 +367,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
         				return console.error('Error acquiring client', err.stack);
    				 } else {
-				 client.query(`SELECT id FROM users WHERE fb_id='${sender}' LIMIT 1`,  
+				 client.query(`SELECT id FROM public.users WHERE fb_id='${sender}' LIMIT 1`,  
                        		 function(err, result) {  
                             		if (err) {  
                                 		console.log('Query error: ' + err); 
                             		} else {
-						console.log('Result DB :'+ result +' result[] DB :'+ result[0] + ' sender : '+ sender);
+						console.log('Result DB :'+ result +' result[] DB :'+ result[0].id + ' sender : '+ sender);
 						let id_users=result[0].id;
     						let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
         						'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
