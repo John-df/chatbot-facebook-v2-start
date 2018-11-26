@@ -515,13 +515,16 @@ async function sendToDialogFlow(sender, textString, params) {
             config.GOOGLE_PROJECT_ID,
             sessionIds.get(sender)
         );
-
+	    //Si User n'a pas changer la langue, on prend langue par défaut
+	if(langue_bot==""){
+		langue_bot=config.DF_LANGUAGE_CODE;
+	}
         const request = {
             session: sessionPath,
             queryInput: {
                 text: {
                     text: textString,
-                    languageCode: config.DF_LANGUAGE_CODE,
+                    languageCode: langue_bot,
                 },
             },
             queryParams: {
@@ -950,14 +953,17 @@ function receivedPostback(event) {
 	// The 'payload' param is a developer-defined field which is set in a postback 
 	// button for Structured Messages. 
 	var payload = event.postback.payload;
-
+	//C'est ici qu'on reçoit le choix de la langue du User lorsqu'il sélectionne qqch dans le menu "langue"
 	switch (payload) {
-		case "LANG_FR" : langue_bot="fr";break;
-		case "LANG_NL" : langue_bot="nl";break;
-		case "LANG_EN" : langue_bot="en";break;
+		case "LANG_FR" : langue_bot="fr";
+				 sendTextMessage(senderID, "Langue : Français"); break;
+		case "LANG_NL" : langue_bot="nl";
+				 sendTextMessage(senderID, "Taal : Nederlands");break;
+		case "LANG_EN" : langue_bot="en";
+				 sendTextMessage(senderID, "language : English");break;
 		default:
 			//unindentified payload
-			sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
+			sendTextMessage(senderID, "Hein!?");
 			break;
 
 	}
