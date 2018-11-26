@@ -892,7 +892,7 @@ function greetUserText(userId) {
  
                 pool.end(); 
 
-				sendTextMessage(userId, "Salut " + user.first_name + '! :) ');
+				sendTextMessage(userId, "Hello " + user.first_name + '! :) ');
 			} else {
 				console.log("Cannot get data for fb user with id",
 					userId);
