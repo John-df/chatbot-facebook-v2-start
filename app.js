@@ -372,7 +372,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                             		if (err) {  
                                 		console.log('Query error: ' + err); 
                             		} else {
-						console.log('Result DB :'+ result +'result[] DB :'+ result[0]);
+						console.log('Result DB :'+ result +' result[] DB :'+ result[0] + ' sender : '+ sender);
 						let id_users=result[0].id;
     						let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
         						'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
