@@ -355,6 +355,29 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
   
                    		   sendEmail('Requete Facility', emailContent); 
 		                   //handleMessages(messages, sender); 
+				//envoie requête base de donnée
+				var pool = new pg.Pool(config.PG_CONFIG);
+				pool.connect(function(err, client, done) {
+
+   				 if (err) {
+
+        				return console.error('Error acquiring client', err.stack);
+   				 }
+
+    				let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
+        				'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
+
+   				 client.query(sql,
+        				[
+           				 
+           				 
+            
+            
+        				]);
+				}
+				});
+				pool.end();
+				}
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
