@@ -290,6 +290,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
 				    let date= "15/11/2018";
 				    let demandeur="Wachrine Oussama";
+				    let email=contexts[0].parameters.fields['email'].stringValue;
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[0].parameters.fields['Espace_confort.original'].stringValue;
 					if (catOrig==categorie){catOrig="";}
@@ -371,16 +372,20 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                             		if (err) {  
                                 		console.log('Query error: ' + err); 
                             		} else {
-
+						let id_users=result[0].id;
     						let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
         						'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
 
    						 client.query(sql,
         						[
-           				 
-           				 
-            
-            
+           				 			id_users,
+							 	categorie,
+							 	email,
+							 	catOrig,
+							 	batiment,
+							 	etage,
+							 	commentaire 				 
+                   
         						]);
 						}
 					}
