@@ -13,6 +13,8 @@ const uuid = require('uuid');
 const pg = require('pg');  
 pg.defaults.ssl = true; 
 
+const langue_bot="";
+
 //let dateFormat=require('dateformat');
 //let date = require('date-and-time');
 
@@ -950,6 +952,9 @@ function receivedPostback(event) {
 	var payload = event.postback.payload;
 
 	switch (payload) {
+		case "LANG_FR" : langue_bot="fr";break;
+		case "LANG_NL" : langue_bot="nl";break;
+		case "LANG_EN" : langue_bot="en";break;
 		default:
 			//unindentified payload
 			sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
