@@ -388,10 +388,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                    
         						]);
 						}
-					}
+				
 					      });
+				 }
 						});
-						pool.end();
+						pool.end();break;
 						
 		default:
 			//unhandled action, just send back the text
