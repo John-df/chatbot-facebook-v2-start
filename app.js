@@ -366,7 +366,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
         				return console.error('Error acquiring client', err.stack);
    				 } else {
-				 client.query(`SELECT fb_id FROM users WHERE fb_id='${userId}' LIMIT 1`,  
+				 client.query(`SELECT id FROM users WHERE fb_id='${sender}' LIMIT 1`,  
                        		 function(err, result) {  
                             		if (err) {  
                                 		console.log('Query error: ' + err); 
