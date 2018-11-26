@@ -956,11 +956,11 @@ function receivedPostback(event) {
 	//C'est ici qu'on reçoit le choix de la langue du User lorsqu'il sélectionne qqch dans le menu "langue"
 	switch (payload) {
 		case "LANG_FR" : langue_bot="fr";
-				 sendTextMessage(senderID, "Langue : Français"); break;
+				 sendTextMessage(senderID, "Langue : 🇫🇷 Français"); break;
 		case "LANG_NL" : langue_bot="nl";
-				 sendTextMessage(senderID, "Taal : Nederlands");break;
+				 sendTextMessage(senderID, "Taal : 🇳🇱 Nederlands");break;
 		case "LANG_EN" : langue_bot="en";
-				 sendTextMessage(senderID, "language : English");break;
+				 sendTextMessage(senderID, "Language : 🇬🇧 English");break;
 		case "<GET_STARTED_PAYLOAD>": greetUserText(senderID);break;
 			
 		default:
