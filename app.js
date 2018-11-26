@@ -961,6 +961,8 @@ function receivedPostback(event) {
 				 sendTextMessage(senderID, "Taal : Nederlands");break;
 		case "LANG_EN" : langue_bot="en";
 				 sendTextMessage(senderID, "language : English");break;
+		case "<GET_STARTED_PAYLOAD>": greetUserText(senderID);break;
+			
 		default:
 			//unindentified payload
 			sendTextMessage(senderID, "Hein!?");
