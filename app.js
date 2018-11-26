@@ -360,6 +360,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		                   //handleMessages(messages, sender); 
 			
 				//envoie requête base de donnée
+			/*
 				var pool = new pg.Pool(config.PG_CONFIG);
 				pool.connect(function(err, client, done) {
 
@@ -373,7 +374,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                                 		console.log('Query error: ' + err); 
                             		} else {
 						console.log(' result[0] DB :'+ result[0] + ' Result type : '+ typeof result);
-						//let id_users=result[0].id;
+						let id_users=result[0].id;
     						let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
         						'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
 
@@ -393,7 +394,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					      });
 				 }
 						});
-						pool.end();break;
+						pool.end(); */ break;
 						
 		default:
 			//unhandled action, just send back the text
