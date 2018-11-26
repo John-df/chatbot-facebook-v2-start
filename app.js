@@ -295,7 +295,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					if (catOrig==categorie){catOrig="";}
 					else {catOrig="("+catOrig+")";}
 				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
-				    let batiment=contexts[0].parameters.fields['batiment'].stringValue+contexts[0].parameters.fields['etage'].stringValue;
+				    let batiment=contexts[0].parameters.fields['batiment'].stringValue
+				    let etage=contexts[0].parameters.fields['etage'].stringValue;
+				    let batiEtage=batiment+etage;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let emailContent = 	'<!DOCTYPE html>'+
@@ -340,7 +342,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							' <th>Bâtiment</th>'+
-							 '<td>'+batiment+'</td>'+
+							 '<td>'+batiEtage+'</td>'+
 							//'<td>Bâtiment</td>'+
 							'</tr> 	'+
 							'<tr> '+
@@ -355,6 +357,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
   
                    		   sendEmail('Requete Facility', emailContent); 
 		                   //handleMessages(messages, sender); 
+			
 				//envoie requête base de donnée
 				var pool = new pg.Pool(config.PG_CONFIG);
 				pool.connect(function(err, client, done) {
