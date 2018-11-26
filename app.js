@@ -365,22 +365,29 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
    				 if (err) {
 
         				return console.error('Error acquiring client', err.stack);
-   				 }
+   				 } else {
+				 client.query(`SELECT fb_id FROM users WHERE fb_id='${userId}' LIMIT 1`,  
+                       		 function(err, result) {  
+                            		if (err) {  
+                                		console.log('Query error: ' + err); 
+                            		} else {
 
-    				let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
-        				'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
+    						let sql = 'INSERT INTO requests (id_users, categorie, email, categorie_originale, batiment, etage, description ) ' +
+        						'VALUES ($1, $2, $3, $4 , $5 , $6 , $7)';
 
-   				 client.query(sql,
-        				[
+   						 client.query(sql,
+        						[
            				 
            				 
             
             
-        				]);
-				}
-				});
-				pool.end();
-				}
+        						]);
+						}
+					}
+					      });
+						});
+						pool.end();
+						
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
