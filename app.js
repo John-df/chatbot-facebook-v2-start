@@ -288,7 +288,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
 				    }*/
 				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
-				    let date= "15/11/2018";
+				   // let date= "15/11/2018";
 				    let demandeur="Wachrine Oussama";
 				    let email=contexts[0].parameters.fields['email'].stringValue;
 				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
@@ -329,7 +329,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>'+date+'</td>'+
+							 '<td>17/08/1988</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
