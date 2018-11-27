@@ -366,14 +366,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
   
                    		//   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
-				let date = new Date();
-				let jour= date.getDate();
-				let mois= date.getMonth()+1;
-				let année= date.getFullYear();
-				let heure= date.getHours();
-				let minute= date.getMinutes();
-				let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
-				console.log(dateFormat);
+				
 			
 				//envoie requête base de donnée
 			
