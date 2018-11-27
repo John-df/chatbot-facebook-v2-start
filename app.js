@@ -301,14 +301,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let batiEtage=batiment+etage;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
-				    let date = new Date();
-				    let jour= date.getDate();
-				    let mois= date.getMonth()+1;
-				    let année= date.getFullYear();
-				    let heure= date.getHours();
-				    let minute= date.getMinutes();
+				    let dateR = new Date();
+				    let jour= dateR.getDate();
+				    let mois= dateR.getMonth()+1;
+				    let année= dateR.getFullYear();
+				    let heure= dateR.getHours();
+				    let minute= dateR.getMinutes();
 				    let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
-					console.log(dateFormat);
+				    console.log(dateFormat);
 				    let emailContent = 	'<!DOCTYPE html>'+
 							'<html>'+
 							'<head>'+
