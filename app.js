@@ -365,7 +365,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				let heure= date.getHours();
 				let minute= date.getMinutes();
 				let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
-				conosle.log(dateFormat);
+				console.log(dateFormat);
 			
 				//envoie requête base de donnée
 			
