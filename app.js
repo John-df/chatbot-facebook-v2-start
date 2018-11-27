@@ -358,7 +358,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
   
                    		//   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
-					console.log("sender : "+sender+ " || sender.id "+ sender.id);
+					console.log("sender : "+sender+ " || sender type "+ typeof sender);
 			
 				//envoie requête base de donnée
 			
