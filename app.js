@@ -301,6 +301,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let batiEtage=batiment+etage;
 				    let paramJson=JSON.stringify(contexts[0].parameters);
 				   // let paramJson=contexts[0].parameters;
+				    let date = new Date();
+				    let jour= date.getDate();
+				    let mois= date.getMonth()+1;
+				    let année= date.getFullYear();
+				    let heure= date.getHours();
+				    let minute= date.getMinutes();
+				    let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
+					console.log(dateFormat);
 				    let emailContent = 	'<!DOCTYPE html>'+
 							'<html>'+
 							'<head>'+
@@ -329,7 +337,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</tr>'+
 							'<tr>'+
     							 '<th>Date</th>'+
-							 '<td>17/08/1988</td>'+
+							 '<td>'+dateFormat+'</td>'+
 							'</tr>'+
 							'<tr>'+
     							 '<th>Catégorie</th>'+
@@ -369,7 +377,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 			
 				//envoie requête base de donnée
 			
-				/*var pool = new pg.Pool(config.PG_CONFIG);
+				var pool = new pg.Pool(config.PG_CONFIG);
 				pool.connect(function(err, client, done) {
 
    				 if (err) {
@@ -385,8 +393,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						//console.log(' result[0] DB :'+ result[0] + ' Result type : '+ typeof result);
 						let id_users=result.rows[0].id;  
     						let sql = 'INSERT INTO requests ( id_users, categorie, email, categorie_originale, '+
-						    	'batiment, etage, description ) ' +
-        						'VALUES ($1, $2, $3, $4 , $5 , $6, $7 )';
+						    	'batiment, etage, description, date ) ' +
+        						'VALUES ($1, $2, $3, $4 , $5 , $6, $7, $8 )';
 
    						 client.query(sql,
         						[
@@ -396,7 +404,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							 	catOrig,
 							 	batiment,
 							 	etage,
-							 	commentaire 				 
+							 	commentaire,
+								dateFormat
                    
         						]);
 						}
@@ -404,7 +413,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					      });
 				 }
 						});
-						pool.end(); */ break;
+						pool.end();  break;
 						
 		default:
 			//unhandled action, just send back the text
