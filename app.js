@@ -358,11 +358,18 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
   
                    		//   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
-				
+				let date = new Date();
+				let jour= date.getDate();
+				let mois= date.getMonth();
+				let année= date.getFullYear();
+				let heure= date.getHours();
+				let minute= date.getMinutes();
+				let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
+				conosle.log(dateFormat);
 			
 				//envoie requête base de donnée
 			
-				var pool = new pg.Pool(config.PG_CONFIG);
+				/*var pool = new pg.Pool(config.PG_CONFIG);
 				pool.connect(function(err, client, done) {
 
    				 if (err) {
@@ -397,7 +404,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					      });
 				 }
 						});
-						pool.end();  break;
+						pool.end(); */ break;
 						
 		default:
 			//unhandled action, just send back the text
