@@ -358,31 +358,32 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
   
                    		//   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
-					console.log("sender : "+sender+ " || sender type "+ typeof sender);
+				
 			
 				//envoie requête base de donnée
 			
-				/*var pool = new pg.Pool(config.PG_CONFIG);
+				var pool = new pg.Pool(config.PG_CONFIG);
 				pool.connect(function(err, client, done) {
 
    				 if (err) {
 
         				return console.error('Error acquiring client', err.stack);
    				 } else {
-				/* client.query(`SELECT id FROM public.users WHERE fb_id='${sender}' LIMIT 1`,  
+				 let senderID=parseInt(sender);	 
+				 client.query(`SELECT id FROM public.users WHERE fb_id='${senderID}' LIMIT 1`,  
                        		 function(err, result) {  
                             		if (err) {  
                                 		console.log('Query error: ' + err); 
                             		} else {
-						console.log(' result[0] DB :'+ result[0] + ' Result type : '+ typeof result);
-						let id_users=result[0].id;  // id_users,
-    						let sql = 'INSERT INTO requests ( categorie, email, categorie_originale, '+
+						//console.log(' result[0] DB :'+ result[0] + ' Result type : '+ typeof result);
+						let id_users=result[0].id;  
+    						let sql = 'INSERT INTO requests ( id_users, categorie, email, categorie_originale, '+
 						    	'batiment, etage, description ) ' +
-        						'VALUES ($1, $2, $3, $4 , $5 , $6 )'; //, $7
+        						'VALUES ($1, $2, $3, $4 , $5 , $6, $7 )';
 
    						 client.query(sql,
         						[
-           				 			//id_users,
+           				 			id_users,
 							 	categorie,
 							 	email,
 							 	catOrig,
@@ -391,12 +392,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							 	commentaire 				 
                    
         						]);
-						//}
+						}
 				
-					    //  });
+					      });
 				 }
 						});
-						pool.end(); */ break;
+						pool.end();  break;
 						
 		default:
 			//unhandled action, just send back the text
