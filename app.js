@@ -357,7 +357,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				  
   
                    		   sendEmail('Requete Facility', emailContent); 
-		                   //handleMessages(messages, sender); 
+		                   handleMessages(messages, sender); 
 			
 				//envoie requête base de donnée
 			/*
