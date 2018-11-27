@@ -360,7 +360,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		                   handleMessages(messages, sender); 
 				let date = new Date();
 				let jour= date.getDate();
-				let mois= date.getMonth();
+				let mois= date.getMonth()+1;
 				let année= date.getFullYear();
 				let heure= date.getHours();
 				let minute= date.getMinutes();
