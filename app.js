@@ -398,7 +398,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							 	batiment,
 							 	etage,
 							 	commentaire,
-								dateFormat
+								dateR
                    
         						]);
 						}
