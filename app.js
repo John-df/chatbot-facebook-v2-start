@@ -217,6 +217,7 @@ function handleQuickReply(senderID, quickReply, messageId) {
 //https://developers.facebook.com/docs/messenger-platform/webhook-reference/message-echo
 
 function handleEcho(messageId, appId, metadata) {
+
 	// Just logging message echoes to console
 	console.log("Received echo for message %s and app %d with metadata %s", messageId, appId, metadata);
 }
@@ -279,6 +280,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
+				
 			//de ici
 				/*console.log(typeof contexts)
 				let ok=true;
@@ -295,11 +297,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				}
 				let taille=  contexts_list.lenght;
 				console.log('--------> noms des contexts (taille :'+taille+'): '); */
+				let contexts_list=[];
+				contexts_list=JSON.stringify(contexts);
+				var taille=contexts_list.lenght;
 				var j=0;
-				for(var i=0;i<4;i++){
+				for(var i=0;i<taille;i++){
 					console.log('json : '+JSON.stringify(contexts[i].name));
-					console.log('stringvalue : '+contexts[i].name.stringValue);
-					if(contexts[i].name.stringValue.includes('espace_travail_request-followup')){
+					
+					if(contexts_list[i].name.includes('espace_travail_request-followup')){
 					   	
 						j=i;
 					   
