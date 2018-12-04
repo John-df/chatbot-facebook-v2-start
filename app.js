@@ -280,7 +280,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
 			//de ici
-				console.log(typeof contexts)
+				/*console.log(typeof contexts)
 				let ok=true;
 				var k =4;
 				
@@ -288,18 +288,20 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				for(var g=0;g<k;++g){
 						console.log(typeof contexts[g]);
 						console.log(JSON.stringify(contexts[g]));
-						console.log(result.contexts[g]);
+						
 						contexts_list[g]=contexts[g];
 						
 					
 				}
 				let taille=  contexts_list.lenght;
-				console.log('--------> noms des contexts (taille :'+taille+'): ');
+				console.log('--------> noms des contexts (taille :'+taille+'): '); */
 				var j=0;
-				for(var i=0;i<taille;++i){
-					//console.log(JSON.stringify(contexts[i].name));
-					if(contexts_list[i].name.includes('espace_travail_request-followup')){
-					   j=i;
+				for(var i=0;i<4;i++){
+					console.log('json : '+JSON.stringify(contexts[i].name));
+					console.log('stringvalue : '+contexts[i].name.stringValue);
+					if(contexts[i].name.stringValue.includes('espace_travail_request-followup')){
+					   	
+						j=i;
 					   
 					   }
 				}
