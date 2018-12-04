@@ -302,6 +302,19 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				console.log('--------> noms des contexts (taille :'+taille+'): '); */
 				
 				var j=0;
+				var i=0;
+				let obj;
+				while(obj!=false){
+					obj=contexts[i];
+					if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
+					   	
+						j=i;
+					   
+					   }
+					i=i+1;
+					
+				}
+			/*
 				for(var i=0;i<4;i++){
 					console.log('json : '+JSON.stringify(contexts[i].name));
 					let test=JSON.stringify(contexts);
@@ -311,7 +324,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						j=i;
 					   
 					   }
-				}
+				}*/
 			//jusque ici
 				    //let date= dateFormat(now,"isoDate");
 				    /*try {
