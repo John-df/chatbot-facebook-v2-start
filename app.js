@@ -282,22 +282,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				   console.log(JSON.stringify(contexts[0].parameters));
 				
 				
-			//de ici
-				/*console.log(typeof contexts)
-				let ok=true;
-				var k =4;
-				
-				let contexts_list=[]
-				for(var g=0;g<k;++g){
-						console.log(typeof contexts[g]);
-						console.log(JSON.stringify(contexts[g]));
-						
-						contexts_list[g]=contexts[g];
-						
-					
-				}
-				let taille=  contexts_list.lenght;
-				console.log('--------> noms des contexts (taille :'+taille+'): '); */
+			// Parcourt tous les contextes pour trouver le bon qui contient les paramètres dont on a besoin
 				
 				var j=0;
 				var i=0;
@@ -317,18 +302,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					i=i+1;
 					
 				}
-			/*
-				for(var i=0;i<4;i++){
-					console.log('json : '+JSON.stringify(contexts[i].name));
-					let test=JSON.stringify(contexts);
-					conole.log(typeof test);
-					if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
-					   	
-						j=i;
-					   
-					   }
-				}*/
-			//jusque ici
+			
+			
 				    //let date= dateFormat(now,"isoDate");
 				    /*try {
 				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
