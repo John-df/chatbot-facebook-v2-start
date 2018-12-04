@@ -281,7 +281,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				   console.log(JSON.stringify(contexts[0].parameters));
 			//de ici
 				console.log(typeof contexts)
-				let ok=True;
+				let ok=true;
 				var k =0;
 				let contexts_list=[]
 				while(ok){
@@ -290,7 +290,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						k = k + 1;
 					}
 					catch(error){
-						ok=False;
+						ok=false;
 					}
 					
 				}
