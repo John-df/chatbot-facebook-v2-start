@@ -279,6 +279,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
+			//check nom de tous les contextes
+				let taille=  contexts.lenght;
+				
+				for(var i=0;i<taille;i++){
+					console.log(contexts[i].name);
+				}
+			//jusque ici
 				    //let date= dateFormat(now,"isoDate");
 				    /*try {
 				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
