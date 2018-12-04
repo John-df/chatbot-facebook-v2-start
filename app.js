@@ -279,11 +279,16 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
-			//check nom de tous les contextes
+			//de ici
 				let taille=  contexts.lenght;
-				console.log('--------> noms des contexts : ');
+				console.log('--------> noms des contexts (taille :'+taille+'): ');
+				var j=0;
 				for(var i=0;i<taille;i++){
-					console.log(JSON.stringify(contexts[i].name));
+					//console.log(JSON.stringify(contexts[i].name));
+					if(contexts[i].name.includes('espace_travail_request-followup'){
+					   j=i;
+					   
+					   }
 				}
 			//jusque ici
 				    //let date= dateFormat(now,"isoDate");
@@ -297,16 +302,16 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
 				   // let date= "15/11/2018";
 				    let demandeur="Wachrine Oussama";
-				    let email=contexts[0].parameters.fields['email'].stringValue;
-				    let categorie=contexts[0].parameters.fields['Espace_confort'].stringValue;
-				    let catOrig=contexts[0].parameters.fields['Espace_confort.original'].stringValue;
+				    let email=contexts[j].parameters.fields['email'].stringValue;
+				    let categorie=contexts[j].parameters.fields['Espace_confort'].stringValue;
+				    let catOrig=contexts[j].parameters.fields['Espace_confort.original'].stringValue;
 					if (catOrig==categorie){catOrig="";}
 					else {catOrig="("+catOrig+")";}
-				    let commentaire=contexts[0].parameters.fields['description'].stringValue;
-				    let batiment=contexts[0].parameters.fields['batiment'].stringValue
-				    let etage=contexts[0].parameters.fields['etage'].stringValue;
+				    let commentaire=contexts[j].parameters.fields['description'].stringValue;
+				    let batiment=contexts[j].parameters.fields['batiment'].stringValue
+				    let etage=contexts[j].parameters.fields['etage'].stringValue;
 				    let batiEtage=batiment+etage;
-				    let paramJson=JSON.stringify(contexts[0].parameters);
+				    let paramJson=JSON.stringify(contexts[j].parameters);
 				   // let paramJson=contexts[0].parameters;
 				    let dateR = new Date();
 				    let jour= dateR.getDate();
