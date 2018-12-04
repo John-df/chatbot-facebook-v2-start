@@ -282,16 +282,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 			//de ici
 				console.log(typeof contexts)
 				let ok=true;
-				var k =0;
+				var k =4;
+				
 				let contexts_list=[]
-				while(ok){
-					try{
-						contexts_list[k]=contexts[k];
-						k = k + 1;
-					}
-					catch(error){
-						ok=false;
-					}
+				for(var g=0;g<k;++g){
+					
+						contexts_list[g]=contexts[g];
+						
 					
 				}
 				let taille=  contexts_list.lenght;
