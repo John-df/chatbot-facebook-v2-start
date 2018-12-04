@@ -280,6 +280,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
 			//de ici
+				console.log(typeof contexts)
 				let taille=  contexts.lenght;
 				console.log('--------> noms des contexts (taille :'+taille+'): ');
 				var j=0;
