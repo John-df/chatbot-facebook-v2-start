@@ -306,11 +306,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					obj=isDefined(contexts[i]);
 					console.log('obj : '+obj);
 					console.log('json : '+JSON.stringify(contexts[i].name));
-					if(obj && JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
-					   	
-						j=i;
-					   
-					   }
+					if(obj){
+						if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
+
+							j=i;
+							break;
+
+						   }
+					}
 					i=i+1;
 					
 				}
