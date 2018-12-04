@@ -286,7 +286,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				
 				let contexts_list=[]
 				for(var g=0;g<k;++g){
-					
+						console.log(typeof contexts[g]);
+						console.log(JSON.stringify(contexts[g]));
+						console.log(result.contexts[g]);
 						contexts_list[g]=contexts[g];
 						
 					
