@@ -245,7 +245,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 	  				        && contexts[0].parameters.fields['years-of-experience'] != '') ? contexts[0].parameters.fields['years-of-experience'].stringValue : ''; 
  
 				let job_vacancy = (isDefined(contexts[0].parameters.fields['job-vacancy']) 
-	   				        && contexts[0].parameters.fields['job-vacancy'] != '') ? contexts[0].parameters.fields['job-vacancy'].stringValue : ''; 
+   				        && contexts[0].parameters.fields['job-vacancy'] != '') ? contexts[0].parameters.fields['job-vacancy'].stringValue : ''; 
 
 				
 				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
@@ -283,7 +283,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				let taille=  contexts.lenght;
 				console.log('--------> noms des contexts : ');
 				for(var i=0;i<taille;i++){
-					console.log(contexts[i].name);
+					console.log(JSON.stringify(contexts[i].name));
 				}
 			//jusque ici
 				    //let date= dateFormat(now,"isoDate");
