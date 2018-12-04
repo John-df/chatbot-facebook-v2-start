@@ -285,7 +285,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				var j=0;
 				for(var i=0;i<taille;++i){
 					//console.log(JSON.stringify(contexts[i].name));
-					if(contexts[i].name.includes('espace_travail_request-followup'){
+					if(contexts[i].name.includes('espace_travail_request-followup')){
 					   j=i;
 					   
 					   }
