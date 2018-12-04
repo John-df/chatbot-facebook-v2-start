@@ -281,7 +281,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
 				console.log('type contexts : '+typeof JSON.stringify(contexts));
-			        console.log('type contexts[0] : '+typeof JSON.stringify(contexts[0]));
+			        console.log(typeof JSON.stringify(contexts[0]));
 				console.log('type contexts[0].parameters : '+typeof JSON.stringify(contexts[0].parameters));
 				
 			//de ici
@@ -304,7 +304,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				var j=0;
 				for(var i=0;i<4;i++){
 					console.log('json : '+JSON.stringify(contexts[i].name));
-					
+					let test=JSON.stringify(contexts);
+					conole.log(typeof test);
 					if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
 					   	
 						j=i;
