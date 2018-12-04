@@ -280,9 +280,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
 			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
 				   console.log(JSON.stringify(contexts[0].parameters));
-				console.log('type contexts : '+typeof JSON.stringify(contexts);
-			        console.log('type contexts[0] : '+typeof JSON.stringify(contexts[0]);
-				console.log('type contexts[0].parameters : '+typeof JSON.stringify(contexts[0].parameters);
+				console.log('type contexts : '+typeof JSON.stringify(contexts));
+			        console.log('type contexts[0] : '+typeof JSON.stringify(contexts[0]));
+				console.log('type contexts[0].parameters : '+typeof JSON.stringify(contexts[0].parameters));
 				
 			//de ici
 				/*console.log(typeof contexts)
