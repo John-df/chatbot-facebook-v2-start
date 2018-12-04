@@ -297,14 +297,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				}
 				let taille=  contexts_list.lenght;
 				console.log('--------> noms des contexts (taille :'+taille+'): '); */
-				let contexts_list=[];
-				contexts_list=JSON.stringify(contexts);
-				var taille=contexts_list.lenght;
+				
 				var j=0;
-				for(var i=0;i<taille;i++){
+				for(var i=0;i<4;i++){
 					console.log('json : '+JSON.stringify(contexts[i].name));
 					
-					if(contexts_list[i].name.includes('espace_travail_request-followup')){
+					if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
 					   	
 						j=i;
 					   
