@@ -304,6 +304,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				let obj;
 				while(obj!=false){
 					obj=isDefined(contexts[i]);
+					console.log('obj : '+obj);
 					console.log('json : '+JSON.stringify(contexts[i].name));
 					if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
 					   	
