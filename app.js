@@ -281,7 +281,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				   console.log(JSON.stringify(contexts[0].parameters));
 			//check nom de tous les contextes
 				let taille=  contexts.lenght;
-				
+				console.log('--------> noms des contexts : ');
 				for(var i=0;i<taille;i++){
 					console.log(contexts[i].name);
 				}
