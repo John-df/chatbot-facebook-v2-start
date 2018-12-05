@@ -329,12 +329,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let dateR = new Date();
 				    let jour= dateR.getDate();
 				    let mois= dateR.getMonth()+1;
-				    let année= dateR.getFullYear();
+ 				    let année= dateR.getFullYear();
 				    let heure= dateR.getHours();
 				    let minute= dateR.getMinutes();
 				    let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
 				    console.log(dateFormat);
-				    let emailContent = 	'<!DOCTYPE html>'+
+				   /* let emailContent = 	'<!DOCTYPE html>'+
 							'<html>'+
 							'<head>'+
 							'<style>'+
@@ -385,9 +385,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    			'</tr>'
 							'</table>'+
 							'</body>'+
-							'</html>';
+							'</html>'; */
 							 
-				  
+				  let emailContent = '<?xml version="1.0" encoding="UTF-8"?>'+
+				      			'<REQUETE>'+
+				      			'<DEMANDEUR>'+demandeur+'</DEMANDEUR>'+
+				      			
+				      			'</REQUETE>'
   
                    		//   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
