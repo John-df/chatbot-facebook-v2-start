@@ -291,10 +291,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							sendQuickReply(sender,title,replies);
 						   }
 					}
-					q=q+1;
+					
 					else {
 						handleMessages(messages, sender);
 					}
+					q=q+1;
 					
 				}break;
 		case "input.welcome":
