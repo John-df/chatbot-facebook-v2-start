@@ -225,7 +225,7 @@ function handleEcho(messageId, appId, metadata) {
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 
 	switch (action) { 
-		case "detailed-application":  
+		/*case "detailed-application":  
             		if (isDefined(contexts[0]) &&
 			    (contexts[0].name.includes('job_application') ||
  			     contexts[0].name.includes('job-application-details_dialog_context')) 
@@ -265,7 +265,26 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				   handleMessages(messages, sender); 
                 		} 
-           		 } break;  
+           		 } break;  */
+		case "Espace_travail_request":
+				var b=0;
+				var q=0;
+				let obj;
+				while(obj!=false){
+					obj=isDefined(contexts[q]);
+					//console.log('obj : '+obj);
+					//console.log('json : '+JSON.stringify(contexts[i].name));
+					if(obj){
+						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
+
+							
+							
+
+						   }
+					}
+					q=q+1;
+					
+				}break;
 		case "input.welcome":
 				
 				greetUserText(sender);break;
@@ -289,8 +308,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				let obj;
 				while(obj!=false){
 					obj=isDefined(contexts[i]);
-					console.log('obj : '+obj);
-					console.log('json : '+JSON.stringify(contexts[i].name));
+					//console.log('obj : '+obj);
+					//console.log('json : '+JSON.stringify(contexts[i].name));
 					if(obj){
 						if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
 
