@@ -387,16 +387,16 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</body>'+
 							'</html>'; */
 							 
-				  let emailContent = '\'<?xml version="1.0" encoding="UTF-8"?>\''+
-				      			'\'<REQUETE>\''+
-				      			'\'<DEMANDEUR>\''+demandeur+'\'</DEMANDEUR>\''+
-				      			'\'<DATE>\''+dateFormat+'\'</DATE>\''+
-				      			'\'<CATEGORIE>\''+categorie+'\'</CATEGORIE>\''+
-				      			'\'<CATEGORIEORIGINALE>\''+catOrig+'\'</CATEGORIEORIGINALE>\''+
-				      			'\'<COMMENTAIRE>\''+commentaire+'\'</COMMENTAIRE>\''+
-				      			'\'<BATIMENT>\''+batiment+'\'</BATIMENT>\''+
-				      			'\'<ETAGE>\''+etage+'\'</ETAGE>\''+				      			      			
-				      			'\'</REQUETE>\'';
+				  let emailContent = '<?xml version="1.0" encoding="UTF-8"?>\n'+
+				      			'<REQUETE>\n'+
+				      			'<DEMANDEUR>'+demandeur+'</DEMANDEUR>\n'+
+				      			'<DATE>'+dateFormat+'</DATE>\n'+
+				      			'<CATEGORIE>'+categorie+'</CATEGORIE>\n'+
+				      			'<CATEGORIEORIGINALE>'+catOrig+'</CATEGORIEORIGINALE>\n'+
+				      			'<COMMENTAIRE>'+commentaire+'</COMMENTAIRE>\n'+
+				      			'<BATIMENT>'+batiment+'</BATIMENT>\n'+
+				      			'<ETAGE>'+etage+'</ETAGE>\n'+				      			      			
+				      			'</REQUETE>';
   
                    		   sendEmail('Requete Facility', emailContent); 
 		                   handleMessages(messages, sender); 
