@@ -292,6 +292,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						   }
 					}
 					q=q+1;
+					else {
+						handleMessages(messages, sender);
+					}
 					
 				}break;
 		case "input.welcome":
