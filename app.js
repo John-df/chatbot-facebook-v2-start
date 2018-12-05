@@ -269,12 +269,12 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_travail_request":
 				
 				var q=0;
-				let obj;
-				while(obj!=false){
-					obj=isDefined(contexts[q]);
+				let objet;
+				while(objet!=false){
+					objet=isDefined(contexts[q]);
 					//console.log('obj : '+obj);
 					//console.log('json : '+JSON.stringify(contexts[i].name));
-					if(obj){
+					if(objet){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
 							
 							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','ROE-M','Stock assets','VEL','YE'];//liste des batiments
