@@ -279,7 +279,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							
 							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','ROE-M','Stock assets','VEL','YE'];//liste des batiments
 							let title='';
-							for(var b=0;b<replies.lenght;i++){
+							for(var b=0;b<replies.lenght;b++){
 								let reply = {
 										"content_type": "text",
 										"title": replies[b],
