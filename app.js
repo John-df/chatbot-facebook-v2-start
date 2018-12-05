@@ -277,7 +277,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					if(objet){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
 							
-							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','ROE-M','Stock assets','VEL','YE'];//liste des batiments
+							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let title='';
 							for(var b=0;b<replies.lenght;b++){
 								let reply = {
