@@ -267,7 +267,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 		} 
            		 } break;  */
 		case "Espace_travail_request":
-				var b=0;
+				
 				var q=0;
 				let obj;
 				while(obj!=false){
@@ -276,8 +276,33 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					//console.log('json : '+JSON.stringify(contexts[i].name));
 					if(obj){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
-
 							
+							let replies = [];//liste des batiments
+							
+							for(var b=0;b<replies.lenght;i++){
+							
+							}
+
+            
+
+                let reply =
+
+                    {
+
+                        "content_type": "text",
+
+                        "title": text,
+
+                        "payload": text
+
+                    }
+
+                replies.push(reply);
+
+            });
+
+            sendQuickReply(sender, message.quickReplies.title, replies);
+						
 							
 
 						   }
