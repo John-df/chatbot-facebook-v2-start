@@ -277,34 +277,18 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					if(obj){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
 							
-							let replies = [];//liste des batiments
-							
+							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','ROE-M','Stock assets','VEL','YE'];//liste des batiments
+							let title='';
 							for(var b=0;b<replies.lenght;i++){
+								let reply = {
+										"content_type": "text",
+										"title": replies[b],
+										"payload": replies[b]
+									    };
+								replies.push(reply);
 							
 							}
-
-            
-
-                let reply =
-
-                    {
-
-                        "content_type": "text",
-
-                        "title": text,
-
-                        "payload": text
-
-                    }
-
-                replies.push(reply);
-
-            });
-
-            sendQuickReply(sender, message.quickReplies.title, replies);
-						
-							
-
+							sendQuickReply(sender,title,replies);
 						   }
 					}
 					q=q+1;
