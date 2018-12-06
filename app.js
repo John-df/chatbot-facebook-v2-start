@@ -278,6 +278,26 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							let replies = [];
 							let title='batiment';
 							var b;
+							for( b=0;b<bat.length;b++){
+								
+								let reply = {
+										"content_type": "text",
+										"title": bat[b],
+										"payload": bat[b]
+									    }
+								replies.push(reply);
+												
+							}
+							sendQuickReply(sender,title,replies);
+						   }
+					}
+					
+					else {
+						handleMessages(messages, sender);
+					}
+					q=q+1;
+					
+				}break;
 		case "Espace_travail_request":
 				
 				var q=0;
