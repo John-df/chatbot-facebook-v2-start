@@ -310,13 +310,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				
 				while(obj!=false){
 					obj=isDefined(contexts[q]);
-					
+					let replies = [];
+					let title='Choisis dans la liste :';
 					if(obj){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
 							
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
-							let replies = [];
-							let title='Choisis dans la liste :';
+							//let replies = [];
+							//let title='Choisis dans la liste :';
 							/*if(langue_bot=='en')  {
 								title='Choose in the list :';
 								}
@@ -335,12 +336,15 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 								replies.push(reply);
 												
 							}
-							sendQuickReply(sender,title,replies);
+							//sendQuickReply(sender,title,replies);
 						   }
 					}
 					
 					else {
 						handleMessages(messages, sender);
+						if(replies.length!=0){
+							sendQuickReply(sender,title,replies);
+						}
 					}
 					q=q+1;
 					
