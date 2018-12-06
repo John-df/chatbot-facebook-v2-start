@@ -250,7 +250,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
 				
 				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
-  
+
+
 				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
 					'.<br> Previous job position: ' + previous_job + '.' + 
 					'.<br> Years of experience: ' + years_of_experience + '.' + 
@@ -286,6 +287,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 										"payload": replies[b]
 									    };
 								replies.push(reply);
+								console.log(reply);
+								console.log('reply : '+ str(reply));
+								console.log('sender : '+ sender);
 							
 							}
 							sendQuickReply(sender,title,replies);
