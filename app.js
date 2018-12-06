@@ -307,11 +307,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 		case "Espace_travail_request":
 				
 				var q=0;
-				
+				let replies = [];
+				let title='Choisis dans la liste :';
 				while(obj!=false){
 					obj=isDefined(contexts[q]);
-					let replies = [];
-					let title='Choisis dans la liste :';
+					
 					if(obj){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
 							
