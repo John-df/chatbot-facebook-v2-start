@@ -285,11 +285,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 										"content_type": "text",
 										"title": replies[b],
 										"payload": replies[b]
-									    };
+									    }
 								replies.push(reply);
-								console.log(reply);
+								/*console.log(reply);
 								console.log('reply : '+ str(reply));
-								console.log('sender : '+ sender);
+								console.log('sender : '+ sender); */
 							
 							}
 							sendQuickReply(sender,title,replies);
