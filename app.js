@@ -291,7 +291,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 										"payload": bat[b]
 									    }
 								replies.push(reply);
-								console.log('for 2 ok');
+								console.log('reply : '+reply);
+								console.log('reply str : '+str(reply));
 								/*console.log(reply);
 								console.log('reply : '+ str(reply));
 								console.log('sender : '+ sender); */
