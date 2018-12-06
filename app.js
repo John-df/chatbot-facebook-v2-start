@@ -280,7 +280,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							console.log('condition if ok ');
 							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let title='';
-							for(var b=0;b<replies.lenght;b++){
+							var b;
+							console.log('replis list lenght : '+replies.lenght);
+							for( b=0;b<replies.lenght;b++){
 								console.log('for 1 ok : '+b);
 								let reply = {
 										"content_type": "text",
