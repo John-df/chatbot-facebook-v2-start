@@ -343,14 +343,16 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					else {
 						handleMessages(messages, sender);
 						console.log('---else in while loop yeah');
-						if(replies.length!=0){
-							console.log("obj false activation agent 47 quickreplies");
-							sendQuickReply(sender,title,replies);
-						}
+						
 					}
 					q=q+1;
 					
-				}break;
+				}
+				if(replies.length!=0){
+					console.log("obj false activation agent 47 quickreplies");
+					sendQuickReply(sender,title,replies);
+					}
+				break;
 		case "input.welcome":
 				
 				greetUserText(sender);break;
