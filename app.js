@@ -281,12 +281,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let title='';
 							for(var b=0;b<replies.lenght;b++){
+								console.log('for 1 ok : '+b);
 								let reply = {
 										"content_type": "text",
 										"title": replies[b],
 										"payload": replies[b]
-									    }
+									    };
 								replies.push(reply);
+								console.log('for 2 ok');
 								/*console.log(reply);
 								console.log('reply : '+ str(reply));
 								console.log('sender : '+ sender); */
