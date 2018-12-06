@@ -280,7 +280,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							console.log('condition if ok ');
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let replies = [];
-							let title='';
+							let title='batiment';
 							var b;
 							console.log('replis list lenght : '+bat.length);
 							for( b=0;b<bat.length;b++){
