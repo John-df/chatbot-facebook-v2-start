@@ -289,7 +289,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 										"content_type": "text",
 										"title": bat[b],
 										"payload": bat[b]
-									    };
+									    }
 								replies.push(reply);
 								console.log('for 2 ok');
 								/*console.log(reply);
