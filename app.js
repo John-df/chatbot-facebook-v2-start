@@ -278,16 +278,17 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					if(objet){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
 							console.log('condition if ok ');
-							let replies = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
+							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
+							let replies = [];
 							let title='';
 							var b;
-							console.log('replis list lenght : '+replies.length);
-							for( b=0;b<replies.length;b++){
+							console.log('replis list lenght : '+bat.length);
+							for( b=0;b<bat.length;b++){
 								console.log('for 1 ok : '+b);
 								let reply = {
 										"content_type": "text",
-										"title": replies[b],
-										"payload": replies[b]
+										"title": bat[b],
+										"payload": bat[b]
 									    };
 								replies.push(reply);
 								console.log('for 2 ok');
