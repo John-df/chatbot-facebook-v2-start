@@ -269,14 +269,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  */
 		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
 				var q=0;
-				
+				let replies = [];
+				let title='Choisis dans la liste :';
 				while(obj!=false){
 					obj=isDefined(contexts[q]);
 					if(obj){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_modif_batiment_dialog_params_batiment')){
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
-							let replies = [];
-							let title='Choisis dans la liste :';
+							
 							/*if(langue_bot=='en')  {
 								title='Choose in the list :';
 								}
@@ -294,7 +294,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 								replies.push(reply);
 												
 							}
-							sendQuickReply(sender,title,replies);
+							
 						   }
 					}
 					
@@ -303,7 +303,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					}
 					q=q+1;
 					
-				}break;
+				}
+				if(replies.length!=0){					
+					sendQuickReply(sender,title,replies);
+					}
+				break;
 		case "Espace_travail_request":
 				
 				var q=0;
@@ -336,20 +340,20 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 								replies.push(reply);
 												
 							}
-							//sendQuickReply(sender,title,replies);
+							
 						   }
 					}
 					
 					else {
 						handleMessages(messages, sender);
-						console.log('---else in while loop yeah');
+						
 						
 					}
 					q=q+1;
 					
 				}
 				if(replies.length!=0){
-					console.log("obj false activation agent 47 quickreplies");
+					
 					sendQuickReply(sender,title,replies);
 					}
 				break;
