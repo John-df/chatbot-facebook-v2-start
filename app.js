@@ -267,36 +267,41 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				   handleMessages(messages, sender); 
                 		} 
            		 } break;  */
+		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
+				var q=0;
+				let objet;
+				while(objet!=false){
+					objet=isDefined(contexts[q]);
+					if(objet){
+						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_modif_batiment_dialog_params_batiment')){
+							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
+							let replies = [];
+							let title='batiment';
+							var b;
 		case "Espace_travail_request":
 				
 				var q=0;
 				let objet;
 				while(objet!=false){
 					objet=isDefined(contexts[q]);
-					console.log('boucle while ok ');
-					//console.log('json : '+JSON.stringify(contexts[i].name));
+					
 					if(objet){
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
-							console.log('condition if ok ');
+							
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let replies = [];
 							let title='batiment';
 							var b;
-							console.log('replis list lenght : '+bat.length);
+							
 							for( b=0;b<bat.length;b++){
-								console.log('for 1 ok : '+b);
+								
 								let reply = {
 										"content_type": "text",
 										"title": bat[b],
 										"payload": bat[b]
 									    }
 								replies.push(reply);
-								console.log('reply.title : '+reply.title);
-								
-								/*console.log(reply);
-								console.log('reply : '+ str(reply));
-								console.log('sender : '+ sender); */
-							
+												
 							}
 							sendQuickReply(sender,title,replies);
 						   }
