@@ -276,7 +276,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_modif_batiment_dialog_params_batiment')){
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let replies = [];
-							let title='batiment';
+							let title='Choisis dans la liste :';
+							if(langue_bot=='en')  {
+								title='Choose in the list :';
+								}
+							else if( langue_bot=='nl'){
+								title='Kies uit de lijst :';
+							}
 							var b;
 							for( b=0;b<bat.length;b++){
 								
@@ -310,7 +316,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							let replies = [];
-							let title='batiment';
+							let title='Choisis dans la liste :';
+							if(langue_bot=='en')  {
+								title='Choose in the list :';
+								}
+							else if( langue_bot=='nl'){
+								title='Kies uit de lijst :';
+							}
 							var b;
 							
 							for( b=0;b<bat.length;b++){
