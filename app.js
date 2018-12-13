@@ -268,13 +268,13 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 		} 
            		 } break;  */
 		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
-				var q=0;
+				var z=0;
 				let replies1 = [];
-				let title='Choisis dans la liste :';
+				let title1='Choisis dans la liste :';
 				while(obj!=false){
-					obj=isDefined(contexts[q]);
+					obj=isDefined(contexts[z]);
 					if(obj){
-						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_modif_batiment_dialog_params_batiment')){
+						if(JSON.stringify(contexts[z].name).includes('espace_travail_request_modif_batiment_dialog_params_batiment')){
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							
 							/*if(langue_bot=='en')  {
@@ -301,11 +301,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					else {
 						handleMessages(messages, sender);
 					}
-					q=q+1;
+					z=z+1;
 					
 				}
 				if(replies.length!=0){					
-					sendQuickReply(sender,title,replies);
+					sendQuickReply(sender,title1,replies1);
 					}
 				break;
 		case "Espace_travail_request":
