@@ -489,7 +489,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				      			'<ETAGE>'+etage+'</ETAGE>\n'+				      			      			
 				      			'</REQUETE>';
   
-                   		   sendEmail('Requete Facility', emailContent); 
+                   		   sendEmail('Facility request', emailContent); 
 		                   handleMessages(messages, sender); 
 				
 			
