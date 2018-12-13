@@ -269,7 +269,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
            		 } break;  */
 		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
 				var q=0;
-				let replies = [];
+				let replies1 = [];
 				let title='Choisis dans la liste :';
 				while(obj!=false){
 					obj=isDefined(contexts[q]);
@@ -291,7 +291,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 										"title": bat[b],
 										"payload": bat[b]
 									    }
-								replies.push(reply);
+								replies1.push(reply);
 												
 							}
 							
