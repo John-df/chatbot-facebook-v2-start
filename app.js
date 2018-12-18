@@ -367,6 +367,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
 				   // let date= "15/11/2018";
 				    let demandeur="Wachrine Oussama";
+				    let nom=contexts[j].parameters.fields['nom'].stringValue;
+				    let prenom=contexts[j].parameters.fields['prenom'].stringValue;
 				    let email=contexts[j].parameters.fields['email'].stringValue;
 				    let categorie=contexts[j].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[j].parameters.fields['Espace_confort.original'].stringValue;
