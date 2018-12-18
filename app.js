@@ -225,48 +225,9 @@ function handleEcho(messageId, appId, metadata) {
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 	let obj;
 	switch (action) { 
-		/*case "detailed-application":  
-            		if (isDefined(contexts[0]) &&
-			    (contexts[0].name.includes('job_application') ||
- 			     contexts[0].name.includes('job-application-details_dialog_context')) 
-			    && contexts[0].parameters) { 
-  
-               			let phone_number = (isDefined(contexts[0].parameters.fields['phone-number'])  
-
-						    && contexts[0].parameters.fields['phone-number'] != '') ? contexts[0].parameters.fields['phone-number'].stringValue : ''; ''; 
-
-				let user_name = (isDefined(contexts[0].parameters.fields['user-name']) 
-					    	&& contexts[0].parameters.fields['user-name'] != '') ? contexts[0].parameters.fields['user-name'].stringValue : ''; 
+		
 
 				
-				let previous_job = (isDefined(contexts[0].parameters.fields['previous-job']) 
- 	    				        && contexts[0].parameters.fields['previous-job'] != '') ? contexts[0].parameters.fields['previous-job'].stringValue : ''; 
- 
-				let years_of_experience = (isDefined(contexts[0].parameters.fields['years-of-experience']) 
-	  				        && contexts[0].parameters.fields['years-of-experience'] != '') ? contexts[0].parameters.fields['years-of-experience'].stringValue : ''; 
- 
-				let job_vacancy = (isDefined(contexts[0].parameters.fields['job-vacancy']) 
-   				        && contexts[0].parameters.fields['job-vacancy'] != '') ? contexts[0].parameters.fields['job-vacancy'].stringValue : ''; 
-
-				
-				if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '') { 
-
-
-				    let emailContent = 'A new job enquiery from ' + user_name + ' for the job: ' + job_vacancy + 
-					'.<br> Previous job position: ' + previous_job + '.' + 
-					'.<br> Years of experience: ' + years_of_experience + '.' + 
-					'.<br> Phone number: ' + phone_number + '.'; 
-  
-                   		   sendEmail('New job application', emailContent); 
-		                   handleMessages(messages, sender); 
-
-
- 
-                   		} else { 
-
-				   handleMessages(messages, sender); 
-                		} 
-           		 } break;  */
 		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
 				var z=0;
 				let replies1 = [];
@@ -278,10 +239,10 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
 							
 							/*if(langue_bot=='en')  {
-								title='Choose in the list :';
+								title1='Choose in the list :';
 								}
 							else if( langue_bot=='nl'){
-								title='Kies uit de lijst :';
+								title1='Kies uit de lijst :';
 							}*/
 							var b;
 							for( b=0;b<bat.length;b++){
