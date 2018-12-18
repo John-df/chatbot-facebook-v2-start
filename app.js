@@ -366,15 +366,17 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    }*/
 				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
 				   // let date= "15/11/2018";
-				    let demandeur="Wachrine Oussama";
-				    let nom=contexts[j].parameters.fields['nom'].stringValue;
-				    let prenom=contexts[j].parameters.fields['prenom'].stringValue;
+				    
+				    let nom=contexts[j].parameters.fields['nom'].stringValue.trim().toLowerCase();
+				    let prenom=contexts[j].parameters.fields['prenom'].stringValue.trim().toLowerCase();
+					nom=nom.charAt(0).toUpperCase()+nom.slice(1);
+					prenom=prenom.charAt(0).toUpperCase()+prenom.slice(1);
 				    let email=contexts[j].parameters.fields['email'].stringValue;
 				    let categorie=contexts[j].parameters.fields['Espace_confort'].stringValue;
 				    let catOrig=contexts[j].parameters.fields['Espace_confort.original'].stringValue;
 					if (catOrig==categorie){catOrig="";}
 					else {catOrig="("+catOrig+")";}
-				    let commentaire=contexts[j].parameters.fields['description'].stringValue;
+				    let commentaire=contexts[j].parameters.fields['description'].stringValue.replace(/,/g," ");
 				    let batiment=contexts[j].parameters.fields['batiment'].stringValue
 				    let etage=contexts[j].parameters.fields['etage'].stringValue;
 				    let batiEtage=batiment+etage;
@@ -441,16 +443,17 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							'</body>'+
 							'</html>'; */
 							 
-				  let emailContent = '<?xml version="1.0" encoding="UTF-8"?>\n'+
+				 /* let emailContent = '<?xml version="1.0" encoding="UTF-8"?>\n'+
 				      			'<REQUETE>\n'+
-				      			'<DEMANDEUR>'+demandeur+'</DEMANDEUR>\n'+
+				      			'<DEMANDEUR>'+nom+' '+prenom+'</DEMANDEUR>\n'+
 				      			'<DATE>'+dateFormat+'</DATE>\n'+
 				      			'<CATEGORIE>'+categorie+'</CATEGORIE>\n'+
 				      			'<CATEGORIEORIGINALE>'+catOrig+'</CATEGORIEORIGINALE>\n'+
 				      			'<COMMENTAIRE>'+commentaire+'</COMMENTAIRE>\n'+
 				      			'<BATIMENT>'+batiment+'</BATIMENT>\n'+
 				      			'<ETAGE>'+etage+'</ETAGE>\n'+				      			      			
-				      			'</REQUETE>';
+				      			'</REQUETE>'; */
+				let emailContent = 
   
                    		   sendEmail('Facility request', emailContent); 
 		                   handleMessages(messages, sender); 
@@ -1210,7 +1213,8 @@ function receivedAuthentication(event) {
 }
 
 /*
- * Verify that the callback came from Facebook. Using the App Secret from 
+
+* Verify that the callback came from Facebook. Using the App Secret from 
  * the App Dashboard, we can verify the signature that is sent with each 
  * callback in the x-hub-signature field, located in the header.
  *
@@ -1253,6 +1257,8 @@ function isDefined(obj) {
 
 	return obj != null;
 }
+
+
 
 // Spin up the server
 app.listen(app.get('port'), function () {
