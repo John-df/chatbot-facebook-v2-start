@@ -367,8 +367,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
 				   // let date= "15/11/2018";
 				    
-				    let nom=contexts[j].parameters.fields['nom'].stringValue.trim().toLowerCase();
-				    let prenom=contexts[j].parameters.fields['prenom'].stringValue.trim().toLowerCase();
+				    let nom=contexts[j].parameters.fields['nom'].stringValue.trim().toLowerCase().replace(","," ");
+				    let prenom=contexts[j].parameters.fields['prenom'].stringValue.trim().toLowerCase().replace(","," ");
 					nom=nom.charAt(0).toUpperCase()+nom.slice(1);
 					prenom=prenom.charAt(0).toUpperCase()+prenom.slice(1);
 				    let email=contexts[j].parameters.fields['email'].stringValue;
@@ -376,7 +376,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				    let catOrig=contexts[j].parameters.fields['Espace_confort.original'].stringValue;
 					if (catOrig==categorie){catOrig="";}
 					else {catOrig="("+catOrig+")";}
-				    let commentaire=contexts[j].parameters.fields['description'].stringValue.replace(/,/g," ");
+				    let commentaire=contexts[j].parameters.fields['description'].stringValue.replace(","," ");
 				    let batiment=contexts[j].parameters.fields['batiment'].stringValue
 				    let etage=contexts[j].parameters.fields['etage'].stringValue;
 				    let batiEtage=batiment+etage;
@@ -453,7 +453,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				      			'<BATIMENT>'+batiment+'</BATIMENT>\n'+
 				      			'<ETAGE>'+etage+'</ETAGE>\n'+				      			      			
 				      			'</REQUETE>'; */
-				let emailContent = 
+				let emailContent = nom+","+prenom+","+categorie+","+commentaire+","+batiment+","+etage;
   
                    		   sendEmail('Facility request', emailContent); 
 		                   handleMessages(messages, sender); 
