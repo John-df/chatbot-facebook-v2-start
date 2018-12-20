@@ -311,7 +311,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				handleMessages(messages, sender);
 				if(replies.length!=0){
 					//Attend que handleMessages se soit exécuté
-					setTimeout(sendQuickReply(sender,title,replies),2000);
+					setTimeout(sendQuickReply,2000,sender,title,replies);
 					}
 				break;
 		case "input.welcome":
