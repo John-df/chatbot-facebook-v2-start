@@ -246,7 +246,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							}*/
 							var b;
 							for( b=0;b<bat.length;b++){
-								
+								console.log("Loop For Espace Travail modif");
 								let reply = {
 										"content_type": "text",
 										"title": bat[b],
@@ -292,7 +292,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							var b;
 							
 							for( b=0;b<bat.length;b++){
-								
+								console.log("Loop For Espace Travail modif");
 								let reply = {
 										"content_type": "text",
 										"title": bat[b],
