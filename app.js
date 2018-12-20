@@ -265,7 +265,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					z=z+1;
 					
 				}
-				if(replies.length!=0){					
+				if(replies1.length!=0){					
 					sendQuickReply(sender,title1,replies1);
 					}
 				break;
