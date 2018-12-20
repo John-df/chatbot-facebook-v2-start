@@ -221,17 +221,17 @@ function handleEcho(messageId, appId, metadata) {
 	// Just logging message echoes to console
 	console.log("Received echo for message %s and app %d with metadata %s", messageId, appId, metadata);
 }
-
+ 
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 	let obj;
 	switch (action) { 
 		
 
 				
-		/*case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
+		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
 				var z=0;
 				let replies1 = [];
-				let title1='Choisis dans la liste :';
+ 				let title1='Choisis dans la liste :';
 				while(obj!=false){
 					obj=isDefined(contexts[z]);
 					if(obj){
@@ -244,9 +244,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 							else if( langue_bot=='nl'){
 								title1='Kies uit de lijst :';
 							}*/
-							/*var b;
+							var b;
 							for( b=0;b<bat.length;b++){
-								console.log("Loop For Espace Travail modif");
+								
 								let reply = {
 										"content_type": "text",
 										"title": bat[b],
@@ -259,16 +259,17 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						   }
 					}
 					
-					else {
+					/*else {
 						handleMessages(messages, sender);
-					}
+					}*/
 					z=z+1;
 					
-				}
+				} //ajout handle ici test
+				handleMessages(messages, sender);
 				if(replies1.length!=0){					
 					sendQuickReply(sender,title1,replies1);
 					}
-				break;*/
+				break;
 		case "Espace_travail_request":
 				
 				var q=0;
