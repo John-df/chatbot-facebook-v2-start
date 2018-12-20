@@ -259,12 +259,10 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						   }
 					}
 					
-					/*else {
-						handleMessages(messages, sender);
-					}*/
+					
 					z=z+1;
 					
-				} //ajout handle ici test
+				} 
 				handleMessages(messages, sender);
 				if(replies1.length!=0){					
 					sendQuickReply(sender,title1,replies1);
@@ -306,14 +304,11 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 						   }
 					}
 					
-					else {
-						handleMessages(messages, sender);
-						
-						
-					}
+					
 					q=q+1;
 					
 				}
+				handleMessages(messages, sender);
 				if(replies.length!=0){
 					
 					sendQuickReply(sender,title,replies);
