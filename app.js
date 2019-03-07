@@ -225,82 +225,19 @@ function handleEcho(messageId, appId, metadata) {
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 	let obj;
 	switch (action) { 
-		
-
-				
-		case "Espace_Travail_Request_Modif.Espace_Travail_Request_Modif_batiment":
-				var z=0;
-				let replies1 = [];
- 				let title1='Choisis dans la liste :';
-				while(obj!=false){
-					obj=isDefined(contexts[z]);
-					if(obj){
-						if(JSON.stringify(contexts[z].name).includes('espace_travail_request_modif_batiment_dialog_params_batiment')){
-							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
-							
-							/*if(langue_bot=='en')  {
-								title1='Choose in the list :';
-								}
-							else if( langue_bot=='nl'){
-								title1='Kies uit de lijst :';
-							}*/
-							var b;
-							for( b=0;b<bat.length;b++){
-								
-								let reply = {
-										"content_type": "text",
-										"title": bat[b],
-										"payload": bat[b]
-									    }
-								replies1.push(reply);
-												
-							}
-							
-						   }
-					}
-					
-					
-					z=z+1;
-					
-				} 
-				handleMessages(messages, sender);
-				if(replies1.length!=0){					
-					sendQuickReply(sender,title1,replies1);
-					}
-				break;
-		case "Espace_travail_request":
+		case "MGB_connexion_error":
 				
 				var q=0;
+				var q2 = 0;
 				let replies = [];
-				let title='Choisis dans la liste :';
+				
 				while(obj!=false){
 					obj=isDefined(contexts[q]);
 					
 					if(obj){
-						if(JSON.stringify(contexts[q].name).includes('espace_travail_request_dialog_params_batiment')){
+						if(JSON.stringify(contexts[q].name).includes('MGB_connexion_error_dialog_params_MGB_1st_Registration_Method')){
 							
-							let bat = ['JA','JQ','JBC','GEN','CHA','LEU','LIE','MAR','PN','VEL','YE'];//liste des batiments (Stock assets et ROE-M retiré pcq trop de quick replies)
-							//let replies = [];
-							//let title='Choisis dans la liste :';
-							/*if(langue_bot=='en')  {
-								title='Choose in the list :';
-								}
-							else if( langue_bot=='nl'){
-								title='Kies uit de lijst :';
-							}*/
-							var b;
-							
-							for( b=0;b<bat.length;b++){
-								console.log("Loop For Espace Travail");
-								let reply = {
-										"content_type": "text",
-										"title": bat[b],
-										"payload": bat[b]
-									    }
-								replies.push(reply);
-												
-							}
-							
+							q2 = q;
 						   }
 					}
 					
@@ -308,193 +245,22 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 					q=q+1;
 					
 				}
+				let isRegistered=contexts[q2].parameters.fields['MGB_1st_Registration_Method'].fields['MGB_Connexion_Registered'];
+				let regMethode=contexts[q2].parameters.fields['MGB_1st_Registration_Method'].fields['MGB_Registration_Method'];
+				
 				handleMessages(messages, sender);
-				if(replies.length!=0){
-					//Attend que handleMessages se soit exécuté
-					setTimeout(sendQuickReply,2000,sender,title,replies);
-					}
+			
+				sendTextMessage(sender, "Tu as un problème de connexion.");
+				if(isRegistered){
+					sendTextMessage(sender, "Tu es bien enregistré.");
+				}
+				if(regMethod){
+					sendTextMessage(sender, "via ${regMethod}.");
+				}
 				break;
 		case "input.welcome":
-				
-				greetUserText(sender);break;
-			
-		case "Espace_Travail_Request_Validation":
-			//sender, action, messages, contexts, parameters
-				//let snd=sender;
-			    	//let action=isDefined(action);
-				//let contexts=isDefined(contexts);
-				//let msg=messages;
-				//let parameters=isDefined(parameters);
-				//console.log("sender : "+snd+" || action : "+action+" || contexts : "+contexts+" || Messages : "+msg+" || parameters : "+parameters);
-			   	//console.log("sender : "+snd+" || Messages : "+JSON.stringify(msg)+" || action : "+action+" || contexts : "+JSON.stringify(contexts));
-				   console.log(JSON.stringify(contexts[0].parameters));
-				
-				
-			// Parcourt tous les contextes pour trouver le bon qui contient les paramètres dont on a besoin
-				
-				var j=0;
-				var i=0;
-				
-				while(obj!=false){
-					obj=isDefined(contexts[i]);
-					//console.log('obj : '+obj);
-					//console.log('json : '+JSON.stringify(contexts[i].name));
-					if(obj){
-						if(JSON.stringify(contexts[i].name).includes('espace_travail_request-followup')){
-
-							j=i;
-							break;
-
-						   }
-					}
-					i=i+1;
-					
-				}
-			
-			
-				    //let date= dateFormat(now,"isoDate");
-				    /*try {
-				    //let categorie=contexts[0].parameters.fields['Espace_confort'];
-				    	let categorie=contexts[0];
-				    }
-				    catch(err){
-					    console.log("------>Erreur action Validation : "+err.message+"\n context : "+categorie);
-				    }*/
-				    //let dateToday= date.format(new Date(), 'YYYY/MM/DD');    
-				   // let date= "15/11/2018";
-				    
-				    let nom=contexts[j].parameters.fields['nom'].stringValue.trim().toLowerCase().replace(","," ");
-				    let prenom=contexts[j].parameters.fields['prenom'].stringValue.trim().toLowerCase().replace(","," ");
-					nom=nom.charAt(0).toUpperCase()+nom.slice(1);
-					prenom=prenom.charAt(0).toUpperCase()+prenom.slice(1);
-				    let email=contexts[j].parameters.fields['email'].stringValue;
-				    let categorie=contexts[j].parameters.fields['Espace_confort'].stringValue;
-				    let catOrig=contexts[j].parameters.fields['Espace_confort.original'].stringValue;
-					if (catOrig==categorie){catOrig="";}
-					else {catOrig="("+catOrig+")";}
-				    let commentaire=contexts[j].parameters.fields['description'].stringValue.replace(","," ");
-				    let batiment=contexts[j].parameters.fields['batiment'].stringValue
-				    let etage=contexts[j].parameters.fields['etage'].stringValue;
-				    let batiEtage=batiment+etage;
-				    let paramJson=JSON.stringify(contexts[j].parameters);
-				   // let paramJson=contexts[0].parameters;
-				    let dateR = new Date();
-				    let jour= dateR.getDate();
-				    let mois= dateR.getMonth()+1;
- 				    let année= dateR.getFullYear();
-				    let heure= dateR.getHours();
-				    let minute= dateR.getMinutes();
-				    let dateFormat=jour+"/"+mois+"/"+année+" "+heure+":"+minute;
-				    console.log(dateFormat);
-				   /* let emailContent = 	'<!DOCTYPE html>'+
-							'<html>'+
-							'<head>'+
-							'<style>'+
-							'table, th, td {'+
-							   ' border: 1px solid blue;}'+
-							'table {'+
- 								'width: 100%;}'+
-							'</style>'+
-							'</head>'+
-							'<body>'+
-							'<h2>Nouvelle Requête N°000102</h2>'+ 
-						        '<div>'+
-								'Bonjour Oussama,<br><br>'+
-								'Ta requête vient d\'être enregistrée et sera traitée dans les plus brefs délais<br><br>'+
-								'Bien à toi <br><br>'+
-							'</div>'+ 
-							'<table> '+
- 							'<tr>'+
-   							 '<th>Référence</th>'+
-							 '<td>000102</td>'+
-							'</tr>'+
-							'<tr>'+
-   							 '<th>Demandeur</th>'+
-							 '<td>'+demandeur+'</td>'+
-							'</tr>'+
-							'<tr>'+
-    							 '<th>Date</th>'+
-							 '<td>'+dateFormat+'</td>'+
-							'</tr>'+
-							'<tr>'+
-    							 '<th>Catégorie</th>'+
-							 //'<td>Catégorie</td>'+
-							'<td>'+categorie+' '+catOrig+'</td>'+
-							'</tr>'+
-							'<tr>'+
-    							 '<th>Commentaire</th>'+
-							//' <td>Commentaire</td>'+
-							'<td>'+commentaire+'</td>'+
-							'</tr>'+
-							'<tr>'+
-    							' <th>Bâtiment</th>'+
-							 '<td>'+batiEtage+'</td>'+
-							//'<td>Bâtiment</td>'+
-							'</tr> 	'+
-							'<tr> '+
-								'<th>Json</th>'+
-								'<td width=" 50%">'+paramJson+'</td>'+
-				    			'</tr>'
-							'</table>'+
-							'</body>'+
-							'</html>'; */
-							 
-				 /* let emailContent = '<?xml version="1.0" encoding="UTF-8"?>\n'+
-				      			'<REQUETE>\n'+
-				      			'<DEMANDEUR>'+nom+' '+prenom+'</DEMANDEUR>\n'+
-				      			'<DATE>'+dateFormat+'</DATE>\n'+
-				      			'<CATEGORIE>'+categorie+'</CATEGORIE>\n'+
-				      			'<CATEGORIEORIGINALE>'+catOrig+'</CATEGORIEORIGINALE>\n'+
-				      			'<COMMENTAIRE>'+commentaire+'</COMMENTAIRE>\n'+
-				      			'<BATIMENT>'+batiment+'</BATIMENT>\n'+
-				      			'<ETAGE>'+etage+'</ETAGE>\n'+				      			      			
-				      			'</REQUETE>'; */
-				let emailContent = nom+","+prenom+","+categorie+","+commentaire+","+batiment+","+etage;
-  
-                   		   sendEmail('Facility request', emailContent); 
-		                   handleMessages(messages, sender); 
-				
-			
-				//envoie requête base de donnée
-			
-				var pool = new pg.Pool(config.PG_CONFIG);
-				pool.connect(function(err, client, done) {
-
-   				 if (err) {
-
-        				return console.error('Error acquiring client', err.stack);
-   				 } else {
-				 let senderID=parseInt(sender);	 
-				 client.query(`SELECT id FROM public.users WHERE fb_id='${senderID}' LIMIT 1`,  
-                       		 function(err, result) {  
-                            		if (err) {  
-                                		console.log('Query error: ' + err); 
-                            		} else {
-						//console.log(' result[0] DB :'+ result[0] + ' Result type : '+ typeof result);
-						let id_users=result.rows[0].id;  
-    						let sql = 'INSERT INTO requests ( id_users, categorie, email, categorie_originale, '+
-						    	'batiment, etage, description, date ) ' +
-        						'VALUES ($1, $2, $3, $4 , $5 , $6, $7, $8 )';
-
-   						 client.query(sql,
-        						[
-           				 			id_users,
-							 	categorie,
-							 	email,
-							 	catOrig,
-							 	batiment,
-							 	etage,
-							 	commentaire,
-								dateR
-                   
-        						]);
-						}
-				
-					      });
-				 }
-						});
-						pool.end();  break;
-						
+				greetUserText(sender);
+			break;
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
