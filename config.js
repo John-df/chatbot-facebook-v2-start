@@ -6,7 +6,7 @@ module.exports = {
     GOOGLE_PROJECT_ID: mgb-faqbot,
     DF_LANGUAGE_CODE: fr,
     GOOGLE_CLIENT_EMAIL: dialogflow-bmntck@mgb-faqbot.iam.gserviceaccount.com,
-    GOOGLE_PRIVATE_KEY: -----BEGIN PRIVATE KEY-----
+    GOOGLE_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----
     MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6cvkTQJrB9Cqc
     1gam9imfJMYBnp7c0x4w3cz6TYluah7f+yarvXOHYQfSXGW5l0VkNmX+xeTSKot7
     q7Seb9h7tC6O0iIRizQdeKyANz1psczQPUA0huzHRbFiFZ4WVMfh2r/hUn/WBL/G
