@@ -212,7 +212,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
             var q = 0;
             var q2 = -1;
 			sendTextMessage(sender, "Donc tu n'arrives pas à te connecter");
-            while(obj != false){
+           /* while(obj != false){
                 obj = isDefined(contexts[q]); // Check if context is set
                 if(obj){
                     if(JSON.stringify(contexts[q].name).includes('MGB_connexion_error_dialog_params_MGB_1st_Registration_Method')){
@@ -220,7 +220,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                     }
                     q++;
                 }            
-            }
+            }*/
             break;
         default:
             //unhandled action, just send back the text
