@@ -225,7 +225,7 @@ function handleEcho(messageId, appId, metadata) {
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 	let obj;
 	switch (action) { 
-		case "MGB_connexion_error":
+/*		case "MGB_connexion_error":
 				
 				var q=0;
 				var q2 = 0;
@@ -257,7 +257,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 				if(regMethod){
 					sendTextMessage(sender, "via ${regMethod}.");
 				}
-				break;
+				break;*/
 		case "input.welcome":
 				greetUserText(sender);
 			break;
