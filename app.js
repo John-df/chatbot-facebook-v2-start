@@ -225,46 +225,10 @@ function handleEcho(messageId, appId, metadata) {
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
 	let obj;
 	switch (action) { 
-/*		case "MGB_connexion_error":
-				
-				var q=0;
-				var q2 = 0;
-				let replies = [];
-				
-				while(obj!=false){
-					obj=isDefined(contexts[q]);
-					
-					if(obj){
-						if(JSON.stringify(contexts[q].name).includes('MGB_connexion_error_dialog_params_MGB_1st_Registration_Method')){
-							
-							q2 = q;
-						   }
-					}
-					
-					
-					q=q+1;
-					
-				}
-				let isRegistered=contexts[q2].parameters.fields['MGB_1st_Registration_Method'].fields['MGB_Connexion_Registered'];
-				let regMethode=contexts[q2].parameters.fields['MGB_1st_Registration_Method'].fields['MGB_Registration_Method'];
-				
-				handleMessages(messages, sender);
-			
-				sendTextMessage(sender, "Tu as un problème de connexion.");
-				if(isRegistered){
-					sendTextMessage(sender, "Tu es bien enregistré.");
-				}
-				if(regMethod){
-					sendTextMessage(sender, "via ${regMethod}.");
-				}
-				break;*/
-		case "input.welcome":
-				greetUserText(sender);
-			break;
 		default:
 			//unhandled action, just send back the text
            		 handleMessages(messages, sender);
-		}
+	}
 }
 
 function sendEmail(subject, content) { 
