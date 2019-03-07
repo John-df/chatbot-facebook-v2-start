@@ -1,3 +1,3 @@
-# Initial code for Udemy course [ChatBots: Messenger ChatBot - DialogFlow and nodejs](https://www.udemy.com/chatbots/?couponCode=GITHUB)
-
+# MGB_FAQbot
+chatbot meant to answer [FAQ of MGB](https://support.aginsurance.be/fr/faq/security/mgb) 
 
