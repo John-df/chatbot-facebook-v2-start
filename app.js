@@ -203,6 +203,7 @@ function handleEcho(messageId, appId, metadata) {
 }
 
 function handleDialogFlowAction(sender, action, messages, contexts, parameters) {
+	sendTextMessage(sender, action);
     let obj;
     switch (action) {            
         case "MGB_connexion_error":
