@@ -207,7 +207,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
     let obj;
     switch (action) {            
         case "MGB_connexion_error":
-			sendTextMessage(sender, "Donc tu n'arrives pas à te connecter");
+			sendTextMessage(sender, "Donc tu n'arrives pas à te connecter hein ?");
            	handleMessages(messages, sender);
 			/* while(obj != false){
                 obj = isDefined(contexts[q]); // Check if context is set
